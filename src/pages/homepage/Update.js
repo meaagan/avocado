@@ -5,29 +5,28 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 const Update = () => {
     const data = useStaticQuery(
-        graphql`
-          query {
+      graphql`
+        query {
 
-            background: file(
-              sourceInstanceName: { eq: "images" }
-              name: { eq: "vinaigrette" }
-            ) {
-              childImageSharp {
-                fluid(maxWidth: 3000) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
+          background: file(
+            sourceInstanceName: { eq: "images" }
+            name: { eq: "vinaigrette" }
+          ) {
+            childImageSharp {
+              fluid(maxWidth: 3000) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }
-    
           }
-        `)
-
-        const image = data.background.childImageSharp.fluid
+  
+        }
+      `
+    )
 
         return(
             <StyledBackground
                 Tag="update"
-                fluid={image}
+                fluid={data.background.childImageSharp.fluid}
             >
                 <h2>Vinaigrette Cremeuse aux sesames maison maintenant disponsible pour achat</h2>
             </StyledBackground>
@@ -35,8 +34,7 @@ const Update = () => {
 }
 
 const StyledBackground = styled(BackgroundImage)`
-    width: 100%;
-    margin: 0;
+    height: 50vh;
 `
 
 export default Update
