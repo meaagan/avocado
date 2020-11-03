@@ -1,0 +1,13 @@
+td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td:nth-child(1) {
+    width: 90%;
+}

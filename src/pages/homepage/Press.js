@@ -4,13 +4,13 @@ import { Container } from '@components/global'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
-const Update = () => {
+const Press = () => {
     const data = useStaticQuery(
       graphql`
         query {
-          background: file(
+          pic1: file(
             sourceInstanceName: { eq: "images" }
-            name: { eq: "vinaigrette" }
+            name: { eq: "tartar" }
           ) {
             childImageSharp {
               fluid(maxWidth: 700, maxHeight: 800) {
@@ -25,11 +25,13 @@ const Update = () => {
 
         return(
           <StyledContainer>
-            <Image><Img fluid={data.background.childImageSharp.fluid} /></Image>
+            <Image><Img fluid={data.pic1.childImageSharp.fluid} /></Image>
             <div>
-              <h3>Vinaigrette Cremeuse aux Sesames Maison</h3>
-              <h4>Maintenant disponsible pour achat</h4>
-              <p>12.50$</p>
+              <h2>Press</h2>
+              <ul>
+                <li><a href="http://canadanightlife.ca/2013/12/5-best-restaurants-worth-the-drive-out-of-the-city/">5 Best Restaurants Worth The Drive Out Of The City</a></li>
+                <li><a href="https://www.mtlblog.com/best-of-mtl/29-bucketlist-montreal-restaurants-you-need-to-try-if-you-havent-already">29 Bucketlist Montreal Restaurants You Need To Try If You Haven't Already</a></li>
+              </ul>
             </div>
           </StyledContainer>
         )
@@ -47,4 +49,4 @@ const Image = styled.figure`
   margin-right: 5%;
 `
 
-export default Update
+export default Press

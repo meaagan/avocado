@@ -1,12 +1,12 @@
 const theme = {
-    font: `'roboto', sans serif`,
+    font: `'Poppins', sans serif`,
     font_size: {
-      xsmall: 'font-size: 16px; line-height: 24px',
-      small: 'font-size: 20px; line-height: 30px',
-      regular: 'font-size: 24px; line-height: 32px',
-      large: 'font-size: 30px; line-height: 40px',
-      larger: 'font-size: 36px; line-height: 48px',
-      xlarge: 'font-size: 48px; line-height: 56px',
+      xsmall: 'font-size: 8px; line-height: 20px',
+      small: 'font-size: 16px; line-height: 24px',
+      regular: 'font-size: 20px; line-height: 30px',
+      large: 'font-size: 24px; line-height: 32px',
+      larger: 'font-size: 30px; line-height: 40px',
+      xlarge: 'font-size: 36px; line-height: 48px',
     },
     font_weight: {
       light: 'font-weight: 300',
@@ -17,11 +17,12 @@ const theme = {
       white: {
         regular: '#FFFFFF',
         dark: '#F6F6F6',
+        darker: '#d6d6d6'
       },
       black: {
-        lighter: '#ABA8AF',
-        light: '#564F62',
-        regular: '#211E26',
+        lighter: 'ADADAD',
+        light: '#5c5c5c',
+        regular: '#262626',
       },
       primary: '#222222',
       secondary: '#555555',

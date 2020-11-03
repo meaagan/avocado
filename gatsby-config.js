@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Roboto\:300,500,700`],
+        fonts: [`Poppins\:300,500,700`],
       },
     },
     {
@@ -31,13 +31,6 @@ module.exports = {
           "js",
         ],
       }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `index`,
-        path: `${__dirname}/src/images/index`,
-      },
     },
     {
       resolve: `gatsby-source-filesystem`,

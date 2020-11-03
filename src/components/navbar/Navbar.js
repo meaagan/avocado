@@ -14,6 +14,7 @@ import {
   AppBarStyled,
   StyledLink 
 } from "./style"
+import './navbar.css'
 
 const Navbar = () => {
   const navLinks = [
@@ -66,6 +67,6 @@ const HomeLink = styled(Link)`
 `
 
 const StyledToolbar = styled(Toolbar)`
-  background-color: ${props => props.theme.color.secondary};
+  
 `
 export default Navbar;

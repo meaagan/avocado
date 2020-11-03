@@ -24,9 +24,8 @@ export const AppBarStyled = styled(AppBar) `
 
 export const StyledLink = styled(GatsbyLink)`
   margin: 0px 0.75em;
-//   ${props => props.theme.font_size.small};
-//   font-family: ${props => props.theme.font.secondary};
-//   color: ${props => props.theme.color.black.light};
+  ${props => props.theme.font_size.small};
+  color: ${props => props.theme.color.white.regular};
   text-decoration: none;
   padding-left: 0.25em;
   padding-right: 0.25em;
