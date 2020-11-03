@@ -36,8 +36,7 @@ export const StyledLink = styled(GatsbyLink)`
   }
 `;
 
-export const Brand = styled.div`
-//   font-family: ${props => props.theme.font.primary};
-//   ${props => props.theme.font_size.large};
-//   color: ${props => props.theme.color.black.regular};
+export const Brand = styled.figure`
+  padding-top: 5px;
+  width: 130px;
 `;

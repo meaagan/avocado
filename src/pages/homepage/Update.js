@@ -1,5 +1,6 @@
 import React from 'react'
-import BackgroundImage from 'gatsby-background-image'
+import Img from 'gatsby-image'
+import { Container } from '@components/global'
 import styled from 'styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
 
@@ -7,13 +8,12 @@ const Update = () => {
     const data = useStaticQuery(
       graphql`
         query {
-
           background: file(
             sourceInstanceName: { eq: "images" }
             name: { eq: "vinaigrette" }
           ) {
             childImageSharp {
-              fluid(maxWidth: 3000) {
+              fluid(maxWidth: 700, maxHeight: 800) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }
@@ -24,17 +24,27 @@ const Update = () => {
     )
 
         return(
-            <StyledBackground
-                Tag="update"
-                fluid={data.background.childImageSharp.fluid}
-            >
-                <h2>Vinaigrette Cremeuse aux sesames maison maintenant disponsible pour achat</h2>
-            </StyledBackground>
+          <StyledContainer>
+            <Image><Img fluid={data.background.childImageSharp.fluid} /></Image>
+            <div>
+              <h3>Vinaigrette Cremeuse aux Sesames Maison</h3>
+              <h4>Maintenant disponsible pour achat</h4>
+              <p>12.50$</p>
+            </div>
+          </StyledContainer>
         )
 }
 
-const StyledBackground = styled(BackgroundImage)`
-    height: 50vh;
+const StyledContainer = styled(Container)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+const Image = styled.figure`
+  width:100%;
+  height:100%;
+  margin-right: 5%;
 `
 
 export default Update

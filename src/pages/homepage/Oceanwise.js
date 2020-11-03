@@ -26,26 +26,36 @@ const Oceanwise = () => {
         <Section>
             <OceanContainer>
                 <Image><Img fluid={data.ow.childImageSharp.fluid} /></Image>
-                <div>
+                <OceanText>
                     <h1>Certification Oceanwise</h1>
-                    <p>Lorem Ipsum</p>
-                </div>
+                    <p>
+                      Ocean Wise est un programme de conservation créé pour informer les consommateurs et les entreprises sur les enjeux liés aux pêcheries et aux pratiques d’aquaculture afin de les habiliter à faire des choix écoresponsables en matière de poissons et fruits de mer.
+                      <br /><br />
+                      Nous travaillons directement avec nos partenaires pour nous assurer qu’ils disposent de l’information scientifique la plus récente sur leurs produits de la mer, afin d’ainsi pouvoir prendre des décisions respectueuses de la santé des océans. La présence du logo Ocean Wise sur un menu ou emballage permet au consommateur de repérer aisément les choix écoresponsables qui préservent la santé de nos océans pour les générations futures.
+                    </p>
+                </OceanText>
             </OceanContainer>
         </Section>
     )
 }
 
 const Image = styled.figure`
-    width: 25%;
+  width: 30%;
+`
+
+const OceanText = styled.div`
+  width: 75%;
+  margin-left: 5%;
 `
 
 const OceanContainer = styled(Container)`
-    display:flex;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2%;
 `
 const Section = styled.div `
-    background-color: ${props => props.theme.color.secondary};
+  background-color: ${props => props.theme.color.secondary};
 `
 
 export default Oceanwise

@@ -1,18 +1,19 @@
 import React from "react"
+import { Link, useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import styled from 'styled-components';
-import { Link } from 'gatsby'
-import SideDrawer from "./SideDrawer"
 import { Toolbar, Hidden } from "@material-ui/core";
+
+import SideDrawer from "./SideDrawer"
 import HideOnScroll from "./HideOnScroll"
 import { 
   Brand, 
   NavbarList,
   NavContainer,
   AppBarStyled,
-  StyledLink } from "./style"
-
-
+  StyledLink 
+} from "./style"
 
 const Navbar = () => {
   const navLinks = [
@@ -20,12 +21,30 @@ const Navbar = () => {
     { title: `contact`, path: `/contact` },
   ]
 
+  const data = useStaticQuery(
+    graphql`
+      query {
+        brand: file(
+          sourceInstanceName: { eq: "images" }
+          name: { eq: "wavewhite" }
+        ) {
+          childImageSharp {
+            fluid(maxWidth: 150) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+
+      }
+    `
+  )
+
   return (
     <HideOnScroll>
       <AppBarStyled position="fixed">
-        <Toolbar style={{backgroundColor: 'white'}}>
+        <StyledToolbar>
           <NavContainer maxWidth="md" style={{display:'flex'}}>
-            <Brand><HomeLink to="/">Avocado</HomeLink></Brand>
+            <Brand><HomeLink to="/"><Img fluid={data.brand.childImageSharp.fluid} /></HomeLink></Brand>
             <Hidden smDown>
               <NavbarList component="nav" aria-labelledby="main navigation">
                 <StyledLink to='/about' key='about'>About</StyledLink>
@@ -36,7 +55,7 @@ const Navbar = () => {
               <SideDrawer navLinks={navLinks} />
             </Hidden>
           </NavContainer>
-        </Toolbar>
+        </StyledToolbar>
       </AppBarStyled>
     </HideOnScroll>
   )
@@ -44,6 +63,9 @@ const Navbar = () => {
 
 const HomeLink = styled(Link)`
   text-decoration: none;
-  // color: ${props => props.theme.color.black.regular};
+`
+
+const StyledToolbar = styled(Toolbar)`
+  background-color: ${props => props.theme.color.secondary};
 `
 export default Navbar;

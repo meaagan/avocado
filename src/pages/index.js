@@ -11,15 +11,16 @@ import Update from './homepage/Update'
 import Instagram from './homepage/Instagram'
 
 const IndexPage = () => (
+
   <Layout>
     <SEO title="Home" />
     <Header />
     <News />
     <About />
     <Oceanwise />
-    <Update />
+    {/* <Update /> */}
     <Instagram />
   </Layout>
 )
 
-export default IndexPage
+export default IndexPage;

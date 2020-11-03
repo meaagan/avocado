@@ -50,7 +50,7 @@ const Instagram = () => {
 
     return (
             <Container>
-              <h2 style={{paddingBottom: '5%'}}>Follow us on Instagram</h2>
+              <h2 style={{padding: '2% 0'}}>Follow us on Instagram</h2>
                 <StyledCarousel
                     swipeable={true}
                     centerMode={true}
