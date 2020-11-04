@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
+import MenuImages from './MenuImages'
 
 import './Tabs.css'
 
@@ -45,6 +46,7 @@ function TabPanel(props) {
         flexGrow: 1,
         display: 'flex',
         height: 700,
+        marginBottom: '20px'
     },
     panel: {
         overflowY: 'auto',
@@ -84,6 +86,7 @@ function MenuTabs() {
             <Tab label="House Maki" {...a11yProps(4)} />
         </Tabs>
         <TabPanel value={value} index={0} className={classes.panel}>
+            <MenuImages />
             <table>
                 <tr>
                     <td>Sushi Apero<br /><em>8pc maki & nigiri chef's choice</em></td>
@@ -104,6 +107,7 @@ function MenuTabs() {
             </table>
         </TabPanel>
         <TabPanel value={value} index={1} className={classes.panel}>
+            <MenuImages />
             <table>
                 <tr>
                     <td>Miso Soup<br /><em>Pick-up only</em></td>
@@ -120,6 +124,7 @@ function MenuTabs() {
             </table>
         </TabPanel>
         <TabPanel value={value} index={2} className={classes.panel}>
+        <MenuImages />
             <table>
                 <tr>
                     <td>Asian Seafood Salad<br /><em>Shrimp, lobster, smoked salmon, and crab stick</em></td>
@@ -136,6 +141,7 @@ function MenuTabs() {
             </table>
         </TabPanel>
         <TabPanel value={value} index={3} className={classes.panel}>
+        <MenuImages />
         <table>
                 <tr>
                     <td>Salmon Tartar<br /><em>Salmon, cucumber, tempura, spicy sauce</em></td>
@@ -152,6 +158,7 @@ function MenuTabs() {
             </table>
         </TabPanel>
         <TabPanel value={value} index={4} className={classes.panel}>
+            <MenuImages />
             <table>
                 <tr>
                     <td>Tessy<br /><em>Spicy scallps, rice and raspberries rolled in rice paper (6 pcs)</em></td>

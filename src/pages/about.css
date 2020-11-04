@@ -1,0 +1,23 @@
+.imageOne {
+    grid-area: imageOne;
+}
+
+.imageTwo {
+    grid-area: imageOne;
+}
+
+.imageThree {
+    grid-area: imageOne;
+}
+
+.textOne {
+    grid-area: textOne;
+}
+
+.textTwo {
+    grid-area: textTwo;
+}
+
+.textThree {
+    grid-area: textThree;
+}
