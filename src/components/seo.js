@@ -29,6 +29,7 @@ function SEO({ description, lang, meta, title }) {
   const defaultTitle = site.siteMetadata?.title
 
   return (
+    <>
     <Helmet
       htmlAttributes={{
         lang,
@@ -70,6 +71,10 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     />
+    <Helmet>    
+      <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
+    </Helmet>
+    </>
   )
 }
 

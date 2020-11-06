@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from 'gatsby-background-image'
 import Form from './contact/Form'
+import AMap from './contact/AMap'
 
 const ThirdPage = () => (
     <StaticQuery
@@ -33,8 +34,13 @@ const ThirdPage = () => (
             backgroundColor={`#040e18`}
           >
             <SEO title="Contact" />
-            <h1>Contact</h1>
-            <Form />
+            <div>
+              <h1>Contact</h1>
+              <Form />
+            </div>
+            <div>
+              <AMap />
+            </div>
           </StyledBackground>
         </Layout>
       )}
