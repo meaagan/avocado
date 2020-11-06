@@ -48,21 +48,23 @@ const About = () => {
   
     return (
         <StyledContainer>
-          <AboutText>
-            <h1>Avocado Sushi du Village</h1>
-            <p>Avocado a vu le jour le 5 octobre 2012. Nous servons des sushis traditionnels et des créations fusionnant tradition, créativité et produits québécois locaux, dont nos fameux sushis desserts. Vin, bière et saké sont également offerts pour accompagner le repas. Il est recommandé de réserver à l’avance.</p>
-          </AboutText>
-            {/* <BootstrapCarousel> */}
-                {/* <Carousel.Item> */}
-                    <Image><Img className="d-block w-100" fluid={data.pic1.childImageSharp.fluid} /></Image>
-                {/* </Carousel.Item>
-                <Carousel.Item>
-                    <Image><Img className="d-block w-100" fluid={data.pic2.childImageSharp.fluid} /></Image>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <Image><Img className="d-block w-100" fluid={data.pic3.childImageSharp.fluid} /></Image>
-                </Carousel.Item>
-            </BootstrapCarousel> */}
+          <Container>
+            <AboutText>
+              <h1>Avocado Sushi du Village</h1>
+              <p>Avocado a vu le jour le 5 octobre 2012. Nous servons des sushis traditionnels et des créations fusionnant tradition, créativité et produits québécois locaux, dont nos fameux sushis desserts. Vin, bière et saké sont également offerts pour accompagner le repas. Il est recommandé de réserver à l’avance.</p>
+            </AboutText>
+              {/* <BootstrapCarousel> */}
+                  {/* <Carousel.Item> */}
+                      <Image><Img className="d-block w-100" fluid={data.pic1.childImageSharp.fluid} /></Image>
+                  {/* </Carousel.Item>
+                  <Carousel.Item>
+                      <Image><Img className="d-block w-100" fluid={data.pic2.childImageSharp.fluid} /></Image>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                      <Image><Img className="d-block w-100" fluid={data.pic3.childImageSharp.fluid} /></Image>
+                  </Carousel.Item>
+              </BootstrapCarousel> */}
+            </Container>
         </StyledContainer>
     )
 }
@@ -79,7 +81,8 @@ const AboutText = styled.div`
 const StyledContainer = styled(Container)`
   background-color: ${props => props.theme.color.white.regular};
   width: 100%;
-  padding: 8px;
+  padding: 2%;
+  max-width: 100%;
   
   h1{
     color: ${props => props.theme.color.black.regular};

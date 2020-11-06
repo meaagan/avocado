@@ -45,19 +45,16 @@ function TabPanel(props) {
     root: {
         flexGrow: 1,
         display: 'flex',
-        height: 700,
-        marginBottom: '20px'
+        height: 600,
+        marginBottom: '5%',
+        backgroundColor: 'rgba(0,0,0,0.1)',
     },
     panel: {
         overflowY: 'auto',
-        width: '75%',
+        width: '90%',
     },
     tabs: {
         borderRight: `1px solid ${theme.palette.divider}`,
-    },
-    cells: {
-        border: '1px solid #dddddd',
-        padding: '8px',
     }
   }));
   
