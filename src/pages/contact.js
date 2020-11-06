@@ -1,12 +1,15 @@
 import React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 
+import { Container } from '@components/global'
+
 import styled from 'styled-components'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from 'gatsby-background-image'
 import Form from './contact/Form'
 import AMap from './contact/AMap'
+import Links from './contact/Links'
 
 const ThirdPage = () => (
     <StaticQuery
@@ -34,13 +37,14 @@ const ThirdPage = () => (
             backgroundColor={`#040e18`}
           >
             <SEO title="Contact" />
-            <div>
-              <h1>Contact</h1>
-              <Form />
-            </div>
-            <div>
+            <ContactContainer>
+              <Left>
+                <h1>Contact</h1>
+                <Links />
+                <Form />
+              </Left>
               <AMap />
-            </div>
+            </ContactContainer>
           </StyledBackground>
         </Layout>
       )}
@@ -54,6 +58,34 @@ const StyledBackground = styled(BackgroundImage)`
   background-position: bottom center;
   background-repeat: repeat-y;
   background-size: cover;
+`
+
+const Left = styled.div`
+  // width: 45%;
+  background-color: white;
+  padding: 2%;
+  border-radius: 5px;
+  margin-bottom: 5%;
+
+  h1{
+    color: black;
+    margin: 0;
+  }
+`
+
+const Right = styled.div`
+  // width: 45%;
+  // height: 100%;
+`
+
+const ContactContainer = styled(Container)`
+  // display: flex;
+  // align-items: center;
+  padding-top: 10%;
+  // justify-content: space-between;
+  width:100%;
+  padding-bottom: 50px;
+
 `
 
 export default ThirdPage

@@ -1,12 +1,34 @@
 import React from "react"
 import { TextField, Button } from '@material-ui/core'
 import styled from 'styled-components';
+import { withStyles } from "@material-ui/core/styles"
 
 const encode = (data) => {
   return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
 }
+
+const CssTextField = withStyles({
+  root: {
+    // Field background
+    '& .MuiFilledInput-root': {
+      backgroundColor: 'rgba(0, 0, 0, 0.0)',
+    },
+    // Input
+    '& .MuiFilledInput-inputMarginDense': {
+      color:'#262626',
+    },
+    // Label overhead
+    '& .MuiInputLabel-filled.MuiInputLabel-shrink.MuiInputLabel-marginDense':{
+      color: '#d6d6d6',
+    },
+    // Label initial
+    '& .MuiFormLabel-root': {
+      color:'#5c5c5c',
+    },
+  },
+})(TextField);
 
 class Form extends React.Component {
   constructor(){
@@ -50,10 +72,11 @@ class Form extends React.Component {
           data-netlify="true" 
           data-netlify-honeypot="bot-field"
           Content-Type="application/x-www-form-urlencoded"
+          
         >
           <input type="hidden" name="form-name" value="contact" />
           <Field>
-            <TextField
+            <CssTextField
               fullWidth
               label="First Name"
               type="text"
@@ -63,23 +86,24 @@ class Form extends React.Component {
               variant="filled"
               size="small"
               required
+              // className={classes.myCustomClass}
             />
           </Field>
           <Field>
-            <TextField
+            <CssTextField
               fullWidth
               label="Last name"
               type="text" 
               name="lastName"
               value={this.state.lastName}
               onChange={this.handleInputChange}
-              variant="outlined"
+              variant="filled"
               size="small"
               required
             />
           </Field>
           <Field>
-            <TextField
+            <CssTextField
               fullWidth 
               label="Email"
               type="email" 
@@ -92,7 +116,7 @@ class Form extends React.Component {
             />
           </Field>
           <Field>
-            <TextField
+            <CssTextField
               fullWidth
               label="Message"
               id="filled-multiline-static" 
@@ -115,7 +139,8 @@ class Form extends React.Component {
 }
 
 const Field = styled.p`
-  margin: 10px;
+  margin-bottom: 10px;
 `
 
 export default Form
+// export default withStyles(styles, { withTheme: true })(Form)

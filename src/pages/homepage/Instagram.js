@@ -49,7 +49,7 @@ const Instagram = () => {
       };
 
     return (
-            <Container>
+            <StyledContainer>
               <h2 style={{padding: '2% 0'}}>Follow us on Instagram</h2>
                 <StyledCarousel
                     swipeable={true}
@@ -66,12 +66,16 @@ const Instagram = () => {
                         )
                     })}
                 </StyledCarousel>
-            </Container>
+            </StyledContainer>
     )
 }
 
 const StyledCarousel = styled(Carousel)`
   transition: all 0.5s ease 0s;
+`
+
+const StyledContainer = styled(Container)`
+  margin-bottom: 25px;
 `
 
 export default Instagram;

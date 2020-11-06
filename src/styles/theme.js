@@ -17,10 +17,10 @@ const theme = {
       white: {
         regular: '#FFFFFF',
         dark: '#F6F6F6',
-        darker: '#d6d6d6'
+        darker: '#ADADAD',
       },
       black: {
-        lighter: 'ADADAD',
+        lighter: '#d6d6d6',
         light: '#5c5c5c',
         regular: '#262626',
       },

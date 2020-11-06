@@ -52,7 +52,6 @@ const FooterContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     display: flex;
-    margin-top:25px;
     padding: 0 2%;
 `
 
