@@ -55,7 +55,7 @@ const About = () => {
             </AboutText>
               {/* <BootstrapCarousel> */}
                   {/* <Carousel.Item> */}
-                      <Image><Img className="d-block w-100" fluid={data.pic1.childImageSharp.fluid} /></Image>
+                      {/* <Image><Img className="d-block w-100" fluid={data.pic1.childImageSharp.fluid} /></Image> */}
                   {/* </Carousel.Item>
                   <Carousel.Item>
                       <Image><Img className="d-block w-100" fluid={data.pic2.childImageSharp.fluid} /></Image>
