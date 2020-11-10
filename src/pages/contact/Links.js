@@ -1,33 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Button from '@material-ui/core/Button';
+import { withStyles } from "@material-ui/core/styles"
+
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faPhone, faEnvelope, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
 // import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Links = () => {
+    const StyledButton = withStyles({
+        root: {
+            fontFamily:'inherit',
+            color: 'inherit',
+            backgroundColor: 'none',
+              '&:hover': {
+                backgroundColor: 'rgb(0, 0, 0, 0.1)',
+              },
+          },
+        })(Button);  
+
     return(
             <ContactLinks>
-                <CLink>
+                <li>
                     {/* <span><FontAwesomeIcon icon={faMapMarkedAlt} /></span>  */}
                     270 ch. Bord-du-Lac - Lakeshore, Pointe-Claire, Quebec, H9S 4K9
-                </CLink>
-                <CLink>
+                </li>
+                <li>
                     {/* <span><FontAwesomeIcon icon={faPhone} /></span> */}
                     (514) 505-4055
-                </CLink>
-                <CLink>
+                </li>
+                <li>
                     {/* <span><FontAwesomeIcon icon={faEnvelope} /></span> */}
-                    <StyledLink href="mailto:victorrose2015@gmail.com">info@avocadosushi.ca</StyledLink>
-                </CLink>
-                <CLink>
+                    <StyledButton><StyledLink href="mailto:victorrose2015@gmail.com">info@avocadosushi.ca</StyledLink></StyledButton>
+                </li>
+                <li>
                     {/* <span><FontAwesomeIcon icon={faFacebook} /></span> */}
-                    <StyledLink href="https://www.facebook.com/avocado.sushi.du.village">/Avocado.sushi.du.village</StyledLink>
-                </CLink>
-                <CLink>
+                    <StyledButton><StyledLink href="https://www.facebook.com/avocado.sushi.du.village">/Avocado.sushi.du.village</StyledLink></StyledButton>
+                </li>
+                <li>
                     {/* <span><FontAwesomeIcon icon={faInstagram} /></span> */}
-                    <StyledLink href="https://www.instagram.com/avocadosushiduvillage/" target="_blank">@avocadosushiduvillage</StyledLink>
-                </CLink>
+                    <StyledButton><StyledLink href="https://www.instagram.com/avocadosushiduvillage/" target="_blank">@avocadosushiduvillage</StyledLink></StyledButton>
+                </li>
             </ContactLinks>
     )
 }
@@ -39,12 +53,8 @@ const ContactLinks = styled.ul`
 `
 
 const StyledLink = styled.a`
-  background-image: linear-gradient(0deg, rgb(202, 157, 124) 50%, transparent 50%);
-  text-decoration: none;
-  color: inherit;
-`
-
-const CLink = styled.li`
+    text-decoration: none;
+    color: inherit;
 `
 
 export default Links

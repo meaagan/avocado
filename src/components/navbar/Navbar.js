@@ -1,9 +1,11 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-
 import styled from 'styled-components';
+
 import { Toolbar, Hidden } from "@material-ui/core";
+import Button from '@material-ui/core/Button';
+import { withStyles } from "@material-ui/core/styles"
 
 import SideDrawer from "./SideDrawer"
 import HideOnScroll from "./HideOnScroll"
@@ -17,11 +19,6 @@ import {
 import './navbar.css'
 
 const Navbar = () => {
-  const navLinks = [
-    { title: `about`, path: `/about` },
-    { title: `contact`, path: `/contact` },
-  ]
-
   const data = useStaticQuery(
     graphql`
       query {
@@ -40,23 +37,53 @@ const Navbar = () => {
     `
   )
 
+  const navLinks = [
+    { title: `about`, path: `/about` },
+    { title: `contact`, path: `/contact` },
+    { title: `order online`, path: `https://order.chkplzapp.com/avocado/menus`}
+  ]
+
+  const OrderButton = withStyles({
+    root: {
+        fontFamily:'inherit',
+        color: 'rgba(255, 255, 255, 0.87)',
+        backgroundColor: 'none',
+          '&:hover': {
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          },
+        border: '1px solid rgba(255,255, 255, 0.23)',
+      },
+    })(Button);
+
+    const NavButton = withStyles({
+      root: {
+          fontFamily:'inherit',
+          color: 'rgba(255, 255, 255, 0.87)',
+          backgroundColor: 'none',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            },
+        },
+      })(Button);
+
   return (
     <HideOnScroll>
       <AppBarStyled position="fixed">
-        <StyledToolbar>
-          <NavContainer maxWidth="md" style={{display:'flex'}}>
+        <Toolbar>
+          <NavContainer maxWidth="lg" style={{display:'flex'}}>
             <Brand><HomeLink to="/"><Img fluid={data.brand.childImageSharp.fluid} /></HomeLink></Brand>
             <Hidden smDown>
               <NavbarList component="nav" aria-labelledby="main navigation">
-                <StyledLink to='/about' key='about'>About</StyledLink>
-                <StyledLink to='/contact' key='contact'>Contact</StyledLink>
+                <StyledLink to='/about' key='about'><NavButton>About</NavButton></StyledLink>
+                <StyledLink to='/contact' key='contact'><NavButton>Contact</NavButton></StyledLink>
+                <a href='https://order.chkplzapp.com/avocado/menus'><OrderButton variant="outlined">Order Online</OrderButton></a>
               </NavbarList>
             </Hidden>
             <Hidden mdUp>
               <SideDrawer navLinks={navLinks} />
             </Hidden>
           </NavContainer>
-        </StyledToolbar>
+        </Toolbar>
       </AppBarStyled>
     </HideOnScroll>
   )
@@ -66,7 +93,4 @@ const HomeLink = styled(Link)`
   text-decoration: none;
 `
 
-const StyledToolbar = styled(Toolbar)`
-  
-`
 export default Navbar;

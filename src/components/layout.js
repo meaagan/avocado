@@ -2,8 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { ThemeProvider } from 'styled-components';
 
-import { useStaticQuery, graphql } from "gatsby"
-
 import theme from '@styles/theme';
 import GlobalStyles from '@styles/GlobalStyles';
 
@@ -11,6 +9,7 @@ import Navbar from '@components/navbar/Navbar'
 import Footer from '@components/footer/Footer'
 // import Header from "./header"
 // import "./layout.css"
+// import { useStaticQuery, graphql } from "gatsby"
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`

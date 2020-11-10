@@ -1,7 +1,7 @@
 const theme = {
     font: `'Poppins', sans serif`,
     font_size: {
-      xsmall: 'font-size: 8px; line-height: 20px',
+      xsmall: 'font-size: 12px; line-height: 20px',
       small: 'font-size: 16px; line-height: 24px',
       regular: 'font-size: 20px; line-height: 30px',
       large: 'font-size: 24px; line-height: 32px',

@@ -61,31 +61,35 @@ const StyledBackground = styled(BackgroundImage)`
 `
 
 const Left = styled.div`
-  // width: 45%;
+  width: 50%;
   background-color: white;
   padding: 2%;
-  border-radius: 5px;
-  margin-bottom: 5%;
-
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -webkit-box-shadow: 10px 10px 31px -10px rgba(0,0,0,0.9);
+  -moz-box-shadow: 10px 10px 31px -10px rgba(0,0,0,0.9);
+  box-shadow: 10px 10px 31px -10px rgba(0,0,0,0.9);
+  height: 100%;
+  
   h1{
     color: black;
     margin: 0;
   }
 `
 
-const Right = styled.div`
-  // width: 45%;
-  // height: 100%;
-`
-
 const ContactContainer = styled(Container)`
-  // display: flex;
-  // align-items: center;
+  display: flex;
+  align-items: stretch;
   padding-top: 10%;
-  // justify-content: space-between;
+  justify-content: center;
   width:100%;
   padding-bottom: 50px;
-
+  height:100%;
+  position: relative;
 `
 
 export default ThirdPage
