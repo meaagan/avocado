@@ -21,35 +21,45 @@ const Links = () => {
         })(Button);  
 
     return(
-            <ContactLinks>
+        <LinkContainer>
+            <ContactLinks style={{paddingTop:'7px'}}>
                 <li>
-                    {/* <span><FontAwesomeIcon icon={faMapMarkedAlt} /></span>  */}
-                    270 ch. Bord-du-Lac - Lakeshore, Pointe-Claire, Quebec, H9S 4K9
+                    270 ch. Bord-du-Lac - Lakeshore<br />Pointe-Claire, Quebec<br />H9S 4K9
                 </li>
                 <li>
-                    {/* <span><FontAwesomeIcon icon={faPhone} /></span> */}
                     (514) 505-4055
                 </li>
+            </ContactLinks>
+            <ContactLinks>
                 <li>
-                    {/* <span><FontAwesomeIcon icon={faEnvelope} /></span> */}
                     <StyledButton><StyledLink href="mailto:victorrose2015@gmail.com">info@avocadosushi.ca</StyledLink></StyledButton>
                 </li>
                 <li>
-                    {/* <span><FontAwesomeIcon icon={faFacebook} /></span> */}
                     <StyledButton><StyledLink href="https://www.facebook.com/avocado.sushi.du.village">/Avocado.sushi.du.village</StyledLink></StyledButton>
                 </li>
                 <li>
-                    {/* <span><FontAwesomeIcon icon={faInstagram} /></span> */}
                     <StyledButton><StyledLink href="https://www.instagram.com/avocadosushiduvillage/" target="_blank">@avocadosushiduvillage</StyledLink></StyledButton>
                 </li>
             </ContactLinks>
+        </LinkContainer>
     )
 }
 
+const LinkContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+
+    @media (max-width: ${props => props.theme.screen.sm}) {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+`
+
 const ContactLinks = styled.ul`
-  list-style: none;
-  padding-left:0;
-  color:black;
+    list-style: none;
+    padding-left:0;
+    color:black;
 `
 
 const StyledLink = styled.a`

@@ -11,7 +11,7 @@ import Form from './contact/Form'
 import AMap from './contact/AMap'
 import Links from './contact/Links'
 
-const ThirdPage = () => (
+const Contact = () => (
     <StaticQuery
       query={graphql`
         query {
@@ -61,35 +61,41 @@ const StyledBackground = styled(BackgroundImage)`
 `
 
 const Left = styled.div`
-  width: 50%;
   background-color: white;
   padding: 2%;
   -webkit-border-top-left-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
   -moz-border-radius-topleft: 5px;
-  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topright: 5px;
   border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
   -webkit-box-shadow: 10px 10px 31px -10px rgba(0,0,0,0.9);
   -moz-box-shadow: 10px 10px 31px -10px rgba(0,0,0,0.9);
   box-shadow: 10px 10px 31px -10px rgba(0,0,0,0.9);
-  height: 100%;
   
-  h1{
+  h1 {
     color: black;
-    margin: 0;
+    width: 200px;
+    margin: 0 auto;
   }
 `
 
 const ContactContainer = styled(Container)`
-  display: flex;
-  align-items: stretch;
+  margin: 0 auto;
   padding-top: 10%;
-  justify-content: center;
-  width:100%;
+  width:50%;
   padding-bottom: 50px;
   height:100%;
   position: relative;
+
+  @media (max-width: ${props => props.theme.screen.md}) {
+    padding-top: 20%;
+    width: 90%;
+    margin: 0 auto;
+  }
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    padding-top: 30%;
+  }
 `
 
-export default ThirdPage
+export default Contact

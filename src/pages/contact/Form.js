@@ -138,7 +138,7 @@ class Form extends React.Component {
   }
 }
 
-const Field = styled.p`
+const Field = styled.div`
   margin-bottom: 10px;
 `
 

@@ -1,6 +1,8 @@
 .mapboxgl-map {
     width: 100% !important;
-  }
+    height:400px;
+    border-radius: 0 0 5px 5px;
+}
   
 .marker {
     background-image: url('mapbox-icon.png');
