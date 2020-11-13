@@ -37,6 +37,7 @@ const Footer = () => {
 
 const Image = styled.figure` 
   width: 100px;
+
 `
 const Location = styled.p`
   text-align: center;
@@ -53,6 +54,11 @@ const FooterContainer = styled.div`
     align-items: center;
     display: flex;
     padding: 0 2%;
+
+    @media (max-width: ${props => props.theme.screen.md}) {
+      flex-direction: column;
+      padding: 10px;
+    }
 `
 
 export default Footer 
