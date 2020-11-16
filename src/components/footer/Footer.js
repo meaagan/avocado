@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
     const data = useStaticQuery(
@@ -23,7 +26,9 @@ const Footer = () => {
 
     return (
         <FooterContainer>
-                <div>Icons</div>
+                <div style={{fontSize:'2rem'}}>
+                  <FontAwesomeIcon icon={faFacebookSquare} />  <FontAwesomeIcon icon={faInstagram} />
+                </div>
                 <Location>
                     Avocado Sushi du Village<br />
                     270 ch. Bord-du-Lac - Lakeshore <br />
