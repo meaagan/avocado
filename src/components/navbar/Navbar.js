@@ -1,7 +1,9 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components';
+
+import {Link, useI18next} from 'gatsby-plugin-react-i18next';
 
 import { Toolbar, Hidden } from "@material-ui/core";
 import Button from '@material-ui/core/Button';
@@ -66,6 +68,8 @@ const Navbar = () => {
         },
       })(Button);
 
+      const {languages, originalPath} = useI18next();
+
   return (
     <HideOnScroll>
       <AppBarStyled position="fixed">
@@ -77,6 +81,15 @@ const Navbar = () => {
                 <StyledLink to='/about' key='about'><NavButton>About</NavButton></StyledLink>
                 <StyledLink to='/contact' key='contact'><NavButton>Contact</NavButton></StyledLink>
                 <a href='https://order.chkplzapp.com/avocado/menus'><OrderButton variant="outlined">Order Online</OrderButton></a>
+                      <ul className="languages">
+                        {languages.map((lng) => (
+                          <li key={lng}>
+                            <Link to={originalPath} language={lng}>
+                              {lng}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
               </NavbarList>
             </Hidden>
             <Hidden mdUp>

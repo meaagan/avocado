@@ -1,0 +1,48 @@
+{
+    "Avocado Sushi du Village": "Avocado Sushi du Village",
+    "description": "",
+    "Avocado sushi was founded on the 5th of October, 2012. We serve traditional sushi and traditional creations fusing tradition, creativity and local Quebec products, including our famous sushi desserts. Wine, beer and sake are also offered to accompany your meal. It is recommended to reserve in advance.": "Avocado sushi was founded on the 5th of October, 2012. We serve traditional sushi and traditional creations fusing tradition, creativity and local Quebec products, including our famous sushi desserts. Wine, beer and sake are also offered to accompany your meal. It is recommended to reserve in advance." ,
+    "menu": {
+        "table d'hote": {
+            "Sushi Apero": "8pc maki & nigiri chef's choice",
+            "Sushi Solo": "16pc maki & nigiri chef's choice",
+            "Sushi Duo": "32pc maki & nigiri chef's choice",
+            "Avocado Bowl": "Bowl of rice with a variety of sashimi, tartars, and vegetables"
+        },
+        "appetizers": {
+            "Miso Soup - Pick-up only":"Miso Soup - Pick-up only",
+            "Japanese Salad": "Japanese Salad",
+            "Wakame Salad (Vegan)":"Wakame Salad (Vegan)"
+        },
+        "meal size salads": {
+            "Asian Seafood Salad":"Asian Seafood Salad",
+            "Shrimp, lobster, smoked salmon, and crab stick":"Shrimp, lobster, smoked salmon, and crab stick",
+            "Magic Salad": "Magic Salad",
+            "Mixed greens with market fruits and vegetables, choice of dressing":"Mixed greens with market fruits and vegetables, choice of dressing",
+            "Sashimi salad":"Sashimi salad",
+            "10 pieces, chef choice, choice of dressing":"10 pieces, chef choice, choice of dressing"
+        },
+        "tartares": {
+            "Salmon Tartar": "Salmon, cucumber, tempura, spicy sauce",
+            "Avocado Tartar":"Spicy scallops and salmon, wasabi lobster, tempura, and sweet sauce",
+            "St-Laurent Tartar": "Spicy salmon, blueberry, tempura, sweet sauce"
+        },
+        "house maki": {
+            "Tessy":"Spicy scallps, rice and raspberries rolled in rice paper (6 pcs)",
+            "Maki St-Laurent":"Spicy salmon, rice, blueberries, avocado, green onions and terikyaki sauce rolled in rice paper (6 pcs)",
+            "Asian Twist":"Spicy scallops, rice, blueberries and tempura rolled in soy paper and garnished with asian pear and lobster with maple syrup and sesame (8 pcs)",
+            "New Zealander":"Crab stick, rice and tempura rolled in soy paper and garnished with kiwi, spicy kanikama, caviar, sesame and teriyaki sauce (8 pcs)",
+            "Barenaked":"Spicy lobster and scallops rolled in salmon sashimis and rice paper (6 pcs)",
+            "Cynthia":"Tuna, lobster, rice and avocado rolled in rice paper and topped with tuna tartar, onions, and tempura, with sweet and sesame sauces (6 pcs)",
+            "Gaia Maki (vegan)":"Rice, lettuce, tofu, avocado, tempura, blueberries, cucumber with spicy vegan mayo in rice paper",
+            "Sashimi Straight Up": "Chef's choice (15 pcs)"
+        }
+    },
+    "oceanwise1": "Ocean Wise is a conservation program created to educate consumers and businesses on issues related to fisheries and aquaculture practices in order to empower them to make eco-responsible choices when it comes to fish and seafood.",
+    "oceanwise2":"We work directly with our partners to ensure they have the most recent scientific information on their seafood, so they can make decisions that respect the health of the oceans. The presence of the Ocean Wise logo on a menu or packaging allows consumers to easily identify eco-responsible choices that preserve the health of our oceans for future generations.",
+    "about_p1": "Seite zwei",
+    "about_p2": "Hallo von der zweiten Seite",
+    "nav_about": "About",
+    "nav_contact": "Contact",
+    "nav_orderonline": "Order Online"
+  }

@@ -1,10 +1,8 @@
 import React from 'react'
 import { Container } from '@components/global'
-import Carousel from 'react-bootstrap/Carousel';
-import BootstrapCarousel from '@components/BootstrapCarousel'
 import styled from 'styled-components';
-import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
+import { Trans } from 'gatsby-plugin-react-i18next';
 
 const About = () => {
     const data = useStaticQuery(
@@ -45,13 +43,15 @@ const About = () => {
           }
         `
     )
+
+
   
     return (
         <StyledContainer>
           <Container>
             <AboutText>
-              <h1>Avocado Sushi du Village</h1>
-              <p>Avocado a vu le jour le 5 octobre 2012. Nous servons des sushis traditionnels et des créations fusionnant tradition, créativité et produits québécois locaux, dont nos fameux sushis desserts. Vin, bière et saké sont également offerts pour accompagner le repas. Il est recommandé de réserver à l’avance.</p>
+              <h1><Trans>Avocado Sushi</Trans></h1>
+              <p><Trans>Avocado sushi was founded on the 5th of October, 2012. We serve traditional sushi and traditional creations fusing tradition, creativity and local Quebec products, including our famous sushi desserts. Wine, beer and sake are also offered to accompany your meal. It is recommended to reserve in advance.</Trans></p>
             </AboutText>
               {/* <BootstrapCarousel> */}
                   {/* <Carousel.Item> */}
