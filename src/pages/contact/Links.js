@@ -49,7 +49,7 @@ const LinkContainer = styled.div`
     display: flex;
     justify-content: space-around;
 
-    @media (max-width: ${props => props.theme.screen.sm}) {
+    @media (max-width: 991px) {
         display: block;
         width: 100%;
         margin: 0 auto;
