@@ -5,23 +5,14 @@ module.exports = {
     author: `Meagan Butters`
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-react-i18next`,
-      options: {
-        path: `${__dirname}/locales`,
-        languages: [`en`, `fr`],
-        defaultLanguage: `en`,
-  
-        // you can pass any i18next options
-        // pass following options to allow message content as a key
-        i18nextOptions: {
-          interpolation: {
-            escapeValue: false // not needed for react as it escapes by default
-          },
-          keySeparator: false,
-          nsSeparator: false
-        },
-      }
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyDefault: 'en',
+        langKeyForNull: 'en',
+        prefixDefault: false,
+      },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
@@ -80,9 +71,8 @@ module.exports = {
         icon: `src/static/wavelogo.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-styled-components`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`
   ],
 }

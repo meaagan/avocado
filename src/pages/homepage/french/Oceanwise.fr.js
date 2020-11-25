@@ -29,9 +29,9 @@ const Oceanwise = () => {
                 <OceanText>
                     <h1>Certification Oceanwise</h1>
                     <p>
-                      Ocean Wise is a conservation program created to educate consumers and businesses on issues related to fisheries and aquaculture practices in order to empower them to make eco-responsible choices when it comes to fish and seafood.
+                      Ocean Wise est un programme de conservation créé pour informer les consommateurs et les entreprises sur les enjeux liés aux pêcheries et aux pratiques d’aquaculture afin de les habiliter à faire des choix écoresponsables en matière de poissons et fruits de mer.
                       <br /><br />
-                      We work directly with our partners to ensure they have the most recent scientific information on their seafood, so they can make decisions that respect the health of the oceans. The presence of the Ocean Wise logo on a menu or packaging allows consumers to easily identify eco-responsible choices that preserve the health of our oceans for future generations.
+                      Nous travaillons directement avec nos partenaires pour nous assurer qu’ils disposent de l’information scientifique la plus récente sur leurs produits de la mer, afin d’ainsi pouvoir prendre des décisions respectueuses de la santé des océans. La présence du logo Ocean Wise sur un menu ou emballage permet au consommateur de repérer aisément les choix écoresponsables qui préservent la santé de nos océans pour les générations futures.
                     </p>
                 </OceanText>
             </OceanContainer>

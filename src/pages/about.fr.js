@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/Layout"
+import Layout from "../components/Layout.fr"
 import SEO from "../components/seo"
 import Triptych from "../components/Triptych"
 import { StaticQuery, graphql } from 'gatsby'
@@ -47,12 +47,12 @@ const SecondPage = () => (
     `}
     render={data => (
       <Layout>
-        <SEO title="About" />
+        <SEO title="À Propos" />
         <StyledContainer>
           <div style={{display:"flex", alignItems:'center'}}>
             <Image><Img fluid={data.img1.childImageSharp.fluid} /></Image>
             <Section>
-              <h1>A Propos</h1>
+              <h1>À Propos</h1>
               <AboutText>Tout a commencé avec un vieux rêve d’entrepreneur en herbe, aux temps de l’école secondaire. Un vieux rêve partagé par deux amies d’enfance qui est maintenant devenu réalité: au cœur du village de Pointe-Claire, les deux complices ont lancé un chaleureux bistro spécialisé dans la création originale de sushis et de tartares. Sylvie Longtin, copropriétaire et chef sushi, et Dominique St-Laurent, copropriétaire et résidente du village de Pointe-Claire, ont aujourd’hui le plaisir de vous faire découvrir Avocado Sushi du Village.</AboutText>
             </Section>
           </div>

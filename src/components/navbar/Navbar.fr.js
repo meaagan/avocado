@@ -38,9 +38,9 @@ const Navbar = () => {
   )
 
   const navLinks = [
-    { title: `about`, path: `/about` },
-    { title: `contact`, path: `/contact` },
-    { title: `order online`, path: `https://order.chkplzapp.com/avocado/menus`}
+    { title: `À Propos`, path: `/fr/about` },
+    { title: `contact`, path: `/fr/contact` },
+    { title: `commander en ligne`, path: `https://order.chkplzapp.com/avocado/menus`}
   ]
 
   const OrderButton = withStyles({
@@ -55,27 +55,28 @@ const Navbar = () => {
       },
     })(Button);
 
-    const NavButton = withStyles({
-      root: {
-          fontFamily:'inherit',
-          color: 'rgba(255, 255, 255, 0.87)',
-          backgroundColor: 'none',
-            '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            },
-        },
-      })(Button);
+  const NavButton = withStyles({
+    root: {
+        fontFamily:'inherit',
+        color: 'rgba(255, 255, 255, 0.87)',
+        backgroundColor: 'none',
+          '&:hover': {
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          },
+      },
+  })(Button);
+
   return (
     <HideOnScroll>
       <AppBarStyled position="fixed">
         <Toolbar>
           <NavContainer maxWidth="lg" style={{display:'flex'}}>
-            <Brand><HomeLink to="/"><Img fluid={data.brand.childImageSharp.fluid} /></HomeLink></Brand>
+            <Brand><HomeLink to="/fr"><Img fluid={data.brand.childImageSharp.fluid} /></HomeLink></Brand>
             <Hidden smDown>
               <NavbarList component="nav" aria-labelledby="main navigation">
-                <StyledLink to='/about' key='about'><NavButton>About</NavButton></StyledLink>
-                <StyledLink to='/contact' key='contact'><NavButton>Contact</NavButton></StyledLink>
-                <a href='https://order.chkplzapp.com/avocado/menus'><OrderButton variant="outlined">Order Online</OrderButton></a>
+                <StyledLink to='/fr/about' key='about'><NavButton>À Propos</NavButton></StyledLink>
+                <StyledLink to='/fr/contact' key='contact'><NavButton>Contact</NavButton></StyledLink>
+                <a href='https://order.chkplzapp.com/avocado/menus'><OrderButton variant="outlined">commander en ligne</OrderButton></a>
                 <ul className="languages">
                   <li><Link to="/">English</Link></li>
                   <li><Link to="/fr">Francais</Link></li>
