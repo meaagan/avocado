@@ -40,7 +40,9 @@ const Navbar = () => {
   const navLinks = [
     { title: `À Propos`, path: `/fr/about` },
     { title: `contact`, path: `/fr/contact` },
-    { title: `commander en ligne`, path: `https://order.chkplzapp.com/avocado/menus`}
+    { title: `commander en ligne`, path: `https://order.chkplzapp.com/avocado/menus`},
+    { title: `English`, path: `/` },
+    { title: `Français`, path: `/fr` }
   ]
 
   const OrderButton = withStyles({
@@ -79,7 +81,7 @@ const Navbar = () => {
                 <a href='https://order.chkplzapp.com/avocado/menus'><OrderButton variant="outlined">commander en ligne</OrderButton></a>
                 <ul className="languages">
                   <li><Link to="/">English</Link></li>
-                  <li><Link to="/fr">Francais</Link></li>
+                  <li><Link to="/fr">Français</Link></li>
                 </ul>
               </NavbarList>
             </Hidden>

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
@@ -40,26 +39,9 @@ function TabPanel(props) {
       'aria-controls': `vertical-tabpanel-${index}`,
     };
   }
-  
-  const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-        display: 'flex',
-        height: 600,
-        marginBottom: '5%',
-        backgroundColor: 'rgba(0,0,0,0.1)',
-    },
-    panel: {
-        overflowY: 'auto',
-        width: '90%',
-    },
-    tabs: {
-        borderRight: `1px solid ${theme.palette.divider}`,
-    }
-  }));
+
   
 function MenuTabs() {
-    const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -67,14 +49,14 @@ function MenuTabs() {
     };
 
     return (
-    <div className={classes.root}>
+    <div className='root'>
         <Tabs
             orientation="vertical"
             variant="fullWidth"
             value={value}
             onChange={handleChange}
             aria-label="Tabs"
-            className={classes.tabs}
+            className='tabs'
         >
             <Tab label="Table D'Hote" {...a11yProps(0)} />
             <Tab label="Appetizers" {...a11yProps(1)} />
@@ -82,7 +64,7 @@ function MenuTabs() {
             <Tab label="Tartares" {...a11yProps(3)} />
             <Tab label="House Maki" {...a11yProps(4)} />
         </Tabs>
-        <TabPanel value={value} index={0} className={classes.panel}>
+        <TabPanel value={value} index={0} className='panel'>
             <MenuImages />
             <table>
                 <tr>
@@ -103,7 +85,7 @@ function MenuTabs() {
                 </tr>
             </table>
         </TabPanel>
-        <TabPanel value={value} index={1} className={classes.panel}>
+        <TabPanel value={value} index={1} className='panel'>
             <MenuImages />
             <table>
                 <tr>
@@ -120,7 +102,7 @@ function MenuTabs() {
                 </tr>
             </table>
         </TabPanel>
-        <TabPanel value={value} index={2} className={classes.panel}>
+        <TabPanel value={value} index={2} className='panel'>
         <MenuImages />
             <table>
                 <tr>
@@ -137,7 +119,7 @@ function MenuTabs() {
                 </tr>
             </table>
         </TabPanel>
-        <TabPanel value={value} index={3} className={classes.panel}>
+        <TabPanel value={value} index={3} className='panel'>
         <MenuImages />
         <table>
                 <tr>
@@ -154,7 +136,7 @@ function MenuTabs() {
                 </tr>
             </table>
         </TabPanel>
-        <TabPanel value={value} index={4} className={classes.panel}>
+        <TabPanel value={value} index={4} className='panel'>
             <MenuImages />
             <table>
                 <tr>

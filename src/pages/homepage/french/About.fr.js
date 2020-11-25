@@ -1,50 +1,8 @@
 import React from 'react'
 import { Container } from '@components/global'
 import styled from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby'
 
-const About = () => {
-    const data = useStaticQuery(
-        graphql`
-          query {
-            pic1: file(
-              sourceInstanceName: { eq: "images" }
-              name: { eq: "nigiri" }
-            ) {
-              childImageSharp {
-                fluid(maxWidth: 3000, maxHeight: 1000) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
-              }
-            }
-            pic2: file(
-                sourceInstanceName: { eq: "images" }
-                name: { eq: "sushis" }
-              ) {
-                childImageSharp {
-                  fluid(maxWidth: 3000, maxHeight: 1000) {
-                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                  }
-                }
-              }
-              pic3: file(
-                sourceInstanceName: { eq: "images" }
-                name: { eq: "tartar" }
-              ) {
-                childImageSharp {
-                  fluid(maxWidth: 3000, maxHeight: 1000) {
-                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                  }
-                }
-              }
-              
-    
-          }
-        `
-    )
-
-
-  
+const About = () => {  
     return (
         <StyledContainer>
           <Container>
