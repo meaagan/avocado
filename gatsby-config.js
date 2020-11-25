@@ -5,6 +5,7 @@ module.exports = {
     author: `Meagan Butters`
   },
   plugins: [
+    `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-i18n`,
