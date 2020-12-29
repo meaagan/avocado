@@ -8,7 +8,7 @@ import 'react-multi-carousel/lib/styles.css';
 
 const Instagram = () => {
     const data = useStaticQuery(graphql`
-        query {
+        myquery {
             allInstaNode {
             edges {
                 node {
