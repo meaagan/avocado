@@ -4,19 +4,28 @@ import styled from 'styled-components'
 
 const News = () => {
     return(
-        <StyledContainer>
-            <h2 style={{textAlign:'center'}}>COVID-19 Mis a jour - 26 juillet, 2020</h2>
-            <p>Chers Clients,
-                <br /><br />
-                Nous continuons notre service de livraison et de commande pour apporter, maintenant offert du Mardi au Samedi à partir de 16h30.
-                <br /><br />
-                Les commandes peuvent être placées par téléphone au 514-505-4055 à partir de 14hr, ou à l'aide de notre SERVICE DE COMMANDE EN LIGNE à partir de minuit le jour de votre commande.
-                <br /><br />
-                À cause du peu d'espace dont nous disposons, nous avons choisi de ne pas rouvrir notre salle à manger pour le moment.
-                Nous vous sommes extrêmement reconnaissants de votre soutien et espérons que vous et vos famille restez en sécurity.
-                <br /><br />
-                Sylvie Longtin & Dominique St-Laurent<br />
-                <em>Copropriétaires, Avocado Sushi</em>
+        <StyledContainer style={{textAlign:'center'}}>
+            <h2>SAISON DES FÊTES 2020 – 2021</h2>
+            <h3>HEURES D’AFFAIRE</h3>
+            <p>
+                <strong>DÉCEMBRE - OUVERT</strong><br />
+                Lundi 21: 4-9pm<br />
+                Mardi 22: 4-9pm<br />
+                Mercredi 23: 4-9pm<br />
+                Jeudi 24: 12-5pm<br />
+                Lundi 28: 4-9pm<br />
+                Mardi 29: 4-9pm<br />
+                Mercredi 30: 4-9pm<br />
+                Jeudi 31: 12-5pm<br />
+                <br />
+                <strong>FERMÉ/CLOSED</strong><br />
+                25 - 26 - 27 décembre<br />
+                1 - 2 - 3 - 4 janvier
+            </p>
+            <p>
+            *NOUS REPRENDRONS NOTRE HORAIRE REGULIER LE 5 JANVIER<br />
+            **NOUS REPONDONS AU TELEPHONE À PARTIR DE 2PM <br />
+            ***NOUS VOUS DEMANDONS, S’IL VOUS PLAIT, DE PLACER VOS COMMANDES A L’AVANCE POUR LES 24 ET 31 DECEMBRE CAR NOUS NE POURRONS MALHEUREUSEMENT PAS REMPLIR DE NOUVELLES COMMANDES LES JOURS MEMES
             </p>
         </StyledContainer>
     )

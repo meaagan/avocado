@@ -19,7 +19,7 @@ const IndexPage = () => {
       <ThemeProvider theme={theme}>
       <SEO title="Home" />
       <Header />
-      {/* <News /> */}
+      <News />
       <About />
       <ImageBreak />
       <Menu />

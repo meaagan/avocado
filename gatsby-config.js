@@ -66,7 +66,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-source-fontawesome`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
