@@ -9,7 +9,7 @@ const MenuImages = () => (
       query {
         img1: file(
           sourceInstanceName: { eq: "images" }
-          name: { eq: "nigiri" }
+          name: { eq: "tartare1" }
         ) {
           childImageSharp {
             fluid(maxWidth: 500, maxHeight: 500) {
@@ -19,7 +19,7 @@ const MenuImages = () => (
         }
         img2: file(
             sourceInstanceName: { eq: "images" }
-            name: { eq: "sushis" }
+            name: { eq: "tartare2" }
           ) {
             childImageSharp {
               fluid(maxWidth: 500, maxHeight: 500) {
@@ -29,7 +29,7 @@ const MenuImages = () => (
           }
           img3: file(
             sourceInstanceName: { eq: "images" }
-            name: { eq: "tartar" }
+            name: { eq: "tartare3" }
           ) {
             childImageSharp {
               fluid(maxWidth: 500, maxHeight: 500) {

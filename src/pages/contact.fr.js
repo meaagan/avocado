@@ -17,10 +17,10 @@ const Contact = () => (
         query {
           background: file(
             sourceInstanceName: { eq: "images" }
-            name: { eq: "platter" }
+            name: { eq: "bg" }
           ) {
             childImageSharp {
-              fluid(maxWidth: 3000) {
+              fluid(maxWidth: 2500) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }

@@ -4,7 +4,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 
-import MenuImages from './MenuImages'
+
+import Tartares from './Tartares'
+import Salads from './Salads'
+import Maki from './Maki'
+import Table from './Table'
+import Appetizers from './Appetizers'
 import './Tabs.css'
 
 function TabPanel(props) {
@@ -65,7 +70,7 @@ function MenuTabs() {
             <Tab label="House Maki" {...a11yProps(4)} />
         </Tabs>
         <TabPanel value={value} index={0} className='panel'>
-            <MenuImages />
+            <Table />
             <table>
                 <tr>
                     <td>Sushi Apero<br /><em>8pc maki & nigiri chef's choice</em></td>
@@ -86,7 +91,7 @@ function MenuTabs() {
             </table>
         </TabPanel>
         <TabPanel value={value} index={1} className='panel'>
-            <MenuImages />
+            <Appetizers />
             <table>
                 <tr>
                     <td>Miso Soup<br /><em>Pick-up only</em></td>
@@ -103,7 +108,7 @@ function MenuTabs() {
             </table>
         </TabPanel>
         <TabPanel value={value} index={2} className='panel'>
-        <MenuImages />
+        <Salads />
             <table>
                 <tr>
                     <td>Asian Seafood Salad<br /><em>Shrimp, lobster, smoked salmon, and crab stick</em></td>
@@ -120,7 +125,7 @@ function MenuTabs() {
             </table>
         </TabPanel>
         <TabPanel value={value} index={3} className='panel'>
-        <MenuImages />
+        <Tartares />
         <table>
                 <tr>
                     <td>Salmon Tartar<br /><em>Salmon, cucumber, tempura, spicy sauce</em></td>
@@ -137,7 +142,7 @@ function MenuTabs() {
             </table>
         </TabPanel>
         <TabPanel value={value} index={4} className='panel'>
-            <MenuImages />
+            <Maki />
             <table>
                 <tr>
                     <td>Tessy<br /><em>Spicy scallps, rice and raspberries rolled in rice paper (6 pcs)</em></td>

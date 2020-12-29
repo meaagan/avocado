@@ -17,7 +17,7 @@ const Contact = () => (
         query {
           background: file(
             sourceInstanceName: { eq: "images" }
-            name: { eq: "platter" }
+            name: { eq: "bg" }
           ) {
             childImageSharp {
               fluid(maxWidth: 3000) {

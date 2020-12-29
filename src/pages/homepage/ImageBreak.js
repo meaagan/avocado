@@ -9,7 +9,7 @@ const ImageBreak = () => {
       query {
         header: file(
           sourceInstanceName: { eq: "images" }
-          name: { eq: "platter" }
+          name: { eq: "break2" }
         ) {
           childImageSharp {
             fluid(maxWidth: 3000) {
