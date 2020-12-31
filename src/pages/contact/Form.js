@@ -1,34 +1,12 @@
 import React from "react"
 import { TextField, Button } from '@material-ui/core'
 import styled from 'styled-components';
-import { withStyles } from "@material-ui/core/styles"
 
 const encode = (data) => {
   return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
 }
-
-const CssTextField = withStyles({
-  root: {
-    // Field background
-    '& .MuiFilledInput-root': {
-      backgroundColor: 'rgba(0, 0, 0, 0.0)',
-    },
-    // Input
-    '& .MuiFilledInput-inputMarginDense': {
-      color:'#262626',
-    },
-    // Label overhead
-    '& .MuiInputLabel-filled.MuiInputLabel-shrink.MuiInputLabel-marginDense':{
-      color: '#d6d6d6',
-    },
-    // Label initial
-    '& .MuiFormLabel-root': {
-      color:'#5c5c5c',
-    },
-  },
-})(TextField);
 
 class Form extends React.Component {
   constructor(){
@@ -39,6 +17,7 @@ class Form extends React.Component {
     firstName: "",
     lastName: "",
     email: "",
+    message: "",
    };
 
    handleClick = e => {
@@ -47,9 +26,8 @@ class Form extends React.Component {
        headers: { "Content-Type": "application/x-www-form-urlencoded"},
        body: encode({ "form-name": "contact", ...this.state })
       })
-        .catch(error => alert("Error! Please fill out all required fields"))
-        .then(() => this.setState({text:'Sent!'}))
-        
+      .catch(error => alert("Error! Please fill out all required fields"))
+      .then(() => this.setState({text:'Sent!'}))
 
       e.preventDefault();
    }
@@ -72,64 +50,64 @@ class Form extends React.Component {
           data-netlify="true" 
           data-netlify-honeypot="bot-field"
           Content-Type="application/x-www-form-urlencoded"
-          
         >
           <input type="hidden" name="form-name" value="contact" />
           <Field>
-            <CssTextField
+            <TextField
               fullWidth
-              label="First Name"
+              label="Prénom/First Name"
               type="text"
               name="firstName"
               value={this.state.firstName}
               onChange={this.handleInputChange}
-              variant="filled"
+              variant="outlined"
               size="small"
               required
-              // className={classes.myCustomClass}
             />
           </Field>
           <Field>
-            <CssTextField
+            <TextField
               fullWidth
-              label="Last name"
+              label="Nom/Last name"
               type="text" 
               name="lastName"
               value={this.state.lastName}
               onChange={this.handleInputChange}
-              variant="filled"
+              variant="outlined"
               size="small"
               required
             />
           </Field>
           <Field>
-            <CssTextField
+            <TextField
               fullWidth 
               label="Email"
               type="email" 
               name="email"
               value={this.state.email}
               onChange={this.handleInputChange}
-              variant="filled"
+              variant="outlined"
               size="small"
               required
             />
           </Field>
           <Field>
-            <CssTextField
+            <TextField
               fullWidth
               label="Message"
-              id="filled-multiline-static" 
+              id="outlined-multiline-static" 
               name="message"
+              value={this.state.message}
+              onChange={this.handleInputChange}
               multiline
               rows={8}
-              variant="filled"
+              variant="outlined"
               size="small"
               required
             />
           </Field>
           <Field>
-            <Button variant="contained" type="submit" onClick= {this.handleClick}>
+            <Button variant="contained" type="submit" onClick={this.handleClick}>
               {this.state.text}
             </Button>
           </Field>
@@ -143,4 +121,3 @@ const Field = styled.div`
 `
 
 export default Form
-// export default withStyles(styles, { withTheme: true })(Form)

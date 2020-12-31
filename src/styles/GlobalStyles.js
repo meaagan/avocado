@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: ${props => props.theme.font};
-    background-color: ${props => props.theme.color.primary}; 
+    background-color: ${props => props.theme.color.primary} !important; 
     margin: 0;
     color: ${props => props.theme.color.white.dark};
   }

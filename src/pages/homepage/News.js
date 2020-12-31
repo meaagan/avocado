@@ -33,7 +33,6 @@ const News = () => {
 
 const StyledContainer = styled(Container)`
     padding:2%;
-    background-color: rgba(255,255,255,0.2);
     margin-top: 2%;
     margin-bottom: 2%;
 `

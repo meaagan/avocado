@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import Layout from "../components/Layout.fr"
 import SEO from "../components/seo"
 import BackgroundImage from 'gatsby-background-image'
-import Form from './contact/Form.fr'
+import Form from './contact/Form'
 import AMap from './contact/AMap'
 import Links from './contact/Links'
 
