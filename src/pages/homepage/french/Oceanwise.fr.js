@@ -40,20 +40,20 @@ const Oceanwise = () => {
 }
 
 const Image = styled.figure`
-  width: 30%;
-  @media (max-width: '991px') {
+  @media (max-width:991px) {
     width:30%;
     margin: 0 auto;
   }
+  width: 30%;
 `
 
 const OceanText = styled.div`
-  width: 75%;
-  margin-left: 5%;
-  @media (max-width: '991px') {
+  @media (max-width:991px) {
     width:90%;
     margin: 0 auto;
   }
+  width: 75%;
+  margin-left: 5%;
 `
 
 const OceanContainer = styled(Container)`
@@ -61,8 +61,9 @@ const OceanContainer = styled(Container)`
   align-items: center;
   justify-content: space-around;
   padding: 2%;
-  @media (max-width: '991px') {
-    display:block;
+
+  @media (max-width:991px) {
+    flex-direction: column;
   }
 `
 const Section = styled.div `
