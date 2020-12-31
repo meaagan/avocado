@@ -41,11 +41,19 @@ const Oceanwise = () => {
 
 const Image = styled.figure`
   width: 30%;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    width:30%;
+    margin: 0 auto;
+  }
 `
 
 const OceanText = styled.div`
   width: 75%;
   margin-left: 5%;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    width:90%;
+    margin: 0 auto;
+  }
 `
 
 const OceanContainer = styled(Container)`
@@ -53,6 +61,9 @@ const OceanContainer = styled(Container)`
   align-items: center;
   justify-content: space-around;
   padding: 2%;
+  @media (max-width: ${props => props.theme.screen.md}) {
+    display:block;
+  }
 `
 const Section = styled.div `
   background-color: #555555;

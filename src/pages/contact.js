@@ -39,7 +39,7 @@ const Contact = () => (
             <SEO title="Contact" />
             <ContactContainer>
               <Left>
-                <h1>Contact</h1>
+                <h1 style={{textAlign:'center'}}>Contact</h1>
                 <Links />
                 <Form />
               </Left>

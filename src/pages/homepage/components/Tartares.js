@@ -3,7 +3,7 @@ import React from "react"
 import Triptych from "@components/Triptych"
 import { StaticQuery, graphql } from 'gatsby'
 
-const MenuImages = () => (
+const Tartares = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -47,4 +47,4 @@ const MenuImages = () => (
   />
 )
 
-export default MenuImages
+export default Tartares

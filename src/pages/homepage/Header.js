@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image';
+import Img from 'gatsby-image';
  
 const Header = () => {
   const data = useStaticQuery(
@@ -34,7 +34,7 @@ const Header = () => {
 
 
 
-const Parallax = styled(BackgroundImage)`
+const Parallax = styled(Img)`
   background-attachment: fixed; 
   background-position: 60% 50%; 
   background-repeat: no-repeat; 
