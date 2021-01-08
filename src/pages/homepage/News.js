@@ -7,7 +7,7 @@ const News = () => {
         <StyledContainer style={{textAlign:'center'}}>
             <h2>Announcements</h2>
             <p>
-                As of Saturday, January 9th 2021, our opening hours for pick-up and delivery will be from 3:00 pm to 7:30pm.
+                As of Saturday, January 9th 2021, we will open as of 3:00 pm and our delivery and pick-up will be available from 3:30 pm to 7:30pm.
             </p>
         </StyledContainer>
     )

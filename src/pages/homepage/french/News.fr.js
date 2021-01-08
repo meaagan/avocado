@@ -7,7 +7,7 @@ const News = () => {
         <StyledContainer style={{textAlign:'center'}}>
             <h2>Annonces</h2>
             <p>
-                À compter du samedi 9 janvier 2021, nos heures d'ouverture pour le ramassage et la livraison seront de 15h00 à 19h30.
+                À compter du samedi 9 janvier 2021, nous ouvrirons à partir de 15h00 et nos livraisons et ramassages seront disponibles de 15h30 à 19h30.
             </p>
         </StyledContainer>
     )
