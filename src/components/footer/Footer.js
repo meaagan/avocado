@@ -27,7 +27,7 @@ const Footer = () => {
     return (
         <FooterContainer>
                 <div style={{fontSize:'2rem'}}>
-                  <FontAwesomeIcon icon={faFacebookSquare} />  <FontAwesomeIcon icon={faInstagram} />
+                  <a href="https://www.facebook.com/avocado.sushi.du.village/"><FontAwesomeIcon icon={faFacebookSquare} /></a>  <a href="https://www.instagram.com/avocadosushiduvillage/"><FontAwesomeIcon icon={faInstagram} /></a>
                 </div>
                 <Location>
                     Avocado Sushi du Village<br />
