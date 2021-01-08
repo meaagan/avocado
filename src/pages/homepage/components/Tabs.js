@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
-
+import AppBar from '@material-ui/core/AppBar';
 
 import Tartares from './Tartares'
 import Salads from './Salads'
@@ -19,8 +19,8 @@ function TabPanel(props) {
       <div
         role="tabpanel"
         hidden={value !== index}
-        id={`vertical-tabpanel-${index}`}
-        aria-labelledby={`vertical-tab-${index}`}
+        id={`scrollable-force-tabpanel-${index}`}
+        aria-labelledby={`scrollable-force-tab-${index}`}
         {...other}
       >
         {value === index && (
@@ -40,8 +40,8 @@ function TabPanel(props) {
   
   function a11yProps(index) {
     return {
-      id: `vertical-tab-${index}`,
-      'aria-controls': `vertical-tabpanel-${index}`,
+      id: `scrollable-force-tab-${index}`,
+      'aria-controls': `scrollable-force-tabpanel-${index}`,
     };
   }
 
@@ -55,13 +55,14 @@ function MenuTabs() {
 
     return (
     <div className='root'>
+        <AppBar position="static">
         <Tabs
-            orientation="vertical"
-            variant="fullWidth"
+            variant="scrollable"
             value={value}
             onChange={handleChange}
             aria-label="Tabs"
             className='tabs'
+            scrollButtons="on"
         >
             <Tab label="Table D'Hote" {...a11yProps(0)} />
             <Tab label="Appetizers" {...a11yProps(1)} />
@@ -69,6 +70,7 @@ function MenuTabs() {
             <Tab label="Tartares" {...a11yProps(3)} />
             <Tab label="House Maki" {...a11yProps(4)} />
         </Tabs>
+        </AppBar>
         <TabPanel value={value} index={0} className='panel'>
             <Table />
             <table>

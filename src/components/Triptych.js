@@ -16,10 +16,10 @@ const TriContainer = styled.div`
     display:flex; 
     justify-content: center;
     margin: 10px;
+    margin-bottom:20px;
 `
 const Image = styled.figure`
     width: 200px;
-    height: 200px;
     margin: 0;
 `
 
