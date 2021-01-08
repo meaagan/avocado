@@ -6,7 +6,6 @@ import About from './homepage/About'
 import Header from './homepage/Header'
 import News from './homepage/News'
 import Oceanwise from './homepage/Oceanwise'
-// import Instagram from './homepage/Instagram'
 import Menu from './homepage/Menu'
 import ImageBreak from './homepage/ImageBreak'
 
@@ -24,7 +23,6 @@ const IndexPage = () => {
       <ImageBreak />
       <Menu />
       <Oceanwise />
-      {/* <Instagram /> */}
       </ThemeProvider>
     </Layout>
   )
