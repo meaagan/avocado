@@ -28,12 +28,12 @@ module.exports = {
         fonts: [`Poppins\:300,500,700`],
       },
     },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: 289365524,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-instagram`,
+    //   options: {
+    //     username: 289365524,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {

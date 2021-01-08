@@ -24,7 +24,7 @@ const IndexPage = () => {
       <ImageBreak />
       <Menu />
       <Oceanwise />
-      <Instagram />
+      {/* <Instagram /> */}
       </ThemeProvider>
     </Layout>
   )
