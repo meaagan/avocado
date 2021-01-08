@@ -9,22 +9,22 @@ const Posts = () => {
     const data = useStaticQuery(graphql`
         query {
             allInstaNode {
-            edges {
-                node {
-                id
-                preview
-                localFile {
-                    childImageSharp {
-                    fixed(width: 200, height: 200, jpegQuality: 100) {
-                        ...GatsbyImageSharpFixed
+                edges {
+                    node {
+                    id
+                    preview
+                    localFile {
+                        childImageSharp {
+                            fixed(width: 200, height: 200, jpegQuality: 100) {
+                                ...GatsbyImageSharpFixed
+                            }
+                        }
+                    }
+                        original
                     }
                 }
-              }
-              original
             }
-          }
         }
-      }
     `)
         
     const instaPosts = data.allInstaNode.edges
