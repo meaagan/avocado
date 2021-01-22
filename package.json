@@ -27,6 +27,7 @@
     "gatsby-plugin-sharp": "^2.12.0",
     "gatsby-plugin-styled-components": "^3.8.0",
     "gatsby-source-filesystem": "^2.9.0",
+    "gatsby-source-instagram": "^0.9.0",
     "gatsby-transformer-sharp": "^2.10.0",
     "mapbox-gl": "^1.13.0",
     "prop-types": "^15.7.2",
