@@ -8,6 +8,7 @@ import News from './homepage/french/News.fr'
 import Oceanwise from './homepage/french/Oceanwise.fr'
 import Menu from './homepage/french/Menu.fr'
 import ImageBreak from './homepage/ImageBreak'
+import Instagram from './homepage/french/Instagram.fr'
 
 import { ThemeProvider } from 'styled-components';
 import theme from '@styles/theme';
@@ -23,6 +24,7 @@ const IndexPage = () => {
       <ImageBreak />
       <Menu />
       <Oceanwise />
+      <Instagram />
       </ThemeProvider>
     </Layout>
   )
