@@ -97,7 +97,7 @@ function MenuTabs() {
             <table>
                 <tr>
                     <td>Miso Soup<br /><em>Pick-up only</em></td>
-                    <td>19</td>
+                    <td>4</td>
                 </tr>
                 <tr>
                     <td>Japenese Salad</td>
