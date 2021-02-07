@@ -41,7 +41,6 @@ const Contact = () => (
               <Left>
               <h1 style={{textAlign:'center'}}>Contact</h1>
                 <Links />
-                <Form />
               </Left>
               <AMap />
             </ContactContainer>
