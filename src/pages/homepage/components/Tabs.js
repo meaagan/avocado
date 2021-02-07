@@ -123,11 +123,11 @@ function MenuTabs() {
                     <td>22</td>
                 </tr>
                 <tr>
-                    <td>Salade Magique<br /><em>Verdure, fruits et légumes du marché, choix de vinaigrette<br />SMixed greens with market fruits and vegetables, choice of dressing</em></td>
+                    <td>Salade Magique<br /><em>Verdure, fruits et légumes du marché, choix de vinaigrette<br />Mixed greens with market fruits and vegetables, choice of dressing</em></td>
                     <td>16</td>
                 </tr>
                 <tr>
-                    <td>Salade de Sashimi salad<br /><em>10 mcx choix du chef, choix de vinaigrette<br />S10 pieces, chef choice, choice of dressing</em></td>
+                    <td>Salade de Sashimi salad<br /><em>10 mcx choix du chef, choix de vinaigrette<br />10 pieces, chef choice, choice of dressing</em></td>
                     <td>17</td>
                 </tr>
             </table>
@@ -136,15 +136,15 @@ function MenuTabs() {
         <Tartares />
         <table>
                 <tr>
-                    <td>Tartare de Saumon | Salmon Tartar<br /><em>Saumon, concombre, tempura, sauce épicée<br />SSalmon, cucumber, tempura, spicy sauce</em></td>
+                    <td>Tartare de Saumon | Salmon Tartar<br /><em>Saumon, concombre, tempura, sauce épicée<br />Salmon, cucumber, tempura, spicy sauce</em></td>
                     <td>14</td>
                 </tr>
                 <tr>
-                    <td>Tartare de <strong>Avocado</strong> Tartar<br /><em>Saumon et pétoncle épicés, homard au wasabi, tempura et sauce sucrée<br />SSpicy scallops and salmon, wasabi lobster, tempura, and sweet sauce</em></td>
+                    <td>Tartare de <strong>Avocado</strong> Tartar<br /><em>Saumon et pétoncle épicés, homard au wasabi, tempura et sauce sucrée<br />Spicy scallops and salmon, wasabi lobster, tempura, and sweet sauce</em></td>
                     <td>19</td>
                 </tr>
                 <tr>
-                    <td>Tartare St-Laurent Tartar<br /><em>Saumon épicé, bleuets, tempura, sauce sucrée<br />SSpicy salmon, blueberry, tempura, sweet sauce</em></td>
+                    <td>Tartare St-Laurent Tartar<br /><em>Saumon épicé, bleuets, tempura, sauce sucrée<br />Spicy salmon, blueberry, tempura, sweet sauce</em></td>
                     <td>17</td>
                 </tr>
             </table>
