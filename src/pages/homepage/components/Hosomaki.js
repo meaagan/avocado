@@ -19,7 +19,7 @@ const Hosomaki = () => (
         }
         img2: file(
             sourceInstanceName: { eq: "images" }
-            name: { eq: "apero1" }
+            name: { eq: "combo3" }
           ) {
             childImageSharp {
               fluid(maxWidth: 500, maxHeight: 500) {
