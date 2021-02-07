@@ -10,6 +10,9 @@ import Salads from './Salads'
 import Maki from './Maki'
 import Table from './Table'
 import Appetizers from './Appetizers'
+import Hosomaki from './Hosomaki'
+import Maki2 from './Maki2'
+import Nigiri from './Nigiri'
 import './Tabs.css'
 
 function TabPanel(props) {
@@ -184,7 +187,7 @@ function MenuTabs() {
             </table>
         </TabPanel>
         <TabPanel value={value} index={5} className='panel'>
-            <Maki />
+            <Nigiri />
             <table>
                 <tr>
                     <td>Sake<br /><em>Saumon<br />Salmon</em></td>
@@ -241,7 +244,7 @@ function MenuTabs() {
             </table>
         </TabPanel>
         <TabPanel value={value} index={6} className='panel'>
-            <Maki />
+            <Hosomaki />
             <table>
                 <tr>
                     <td>Sake<br /><em>Saumon<br />Salmon</em></td>
@@ -270,7 +273,7 @@ function MenuTabs() {
             </table>
         </TabPanel>
         <TabPanel value={value} index={7} className='panel'>
-            <Maki />
+            <Maki2 />
             <table>
                 <tr>
                     <td>California<br /><em>Simili crabe, omelette japonaise, concombre, avocat, mayonnaise, massago<br />Pollock, japanese omelet, cucumber, avocado, mayonnaise, massago</em></td>
