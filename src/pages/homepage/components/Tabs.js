@@ -180,6 +180,63 @@ function MenuTabs() {
                 </tr>
             </table>
         </TabPanel>
+        <TabPanel value={value} index={4} className='panel'>
+            <Maki />
+            <table>
+                <tr>
+                    <td>Sake<br /><em>Saumon | salmon</em></td>
+                    <td>7.25</td>
+                </tr>
+                <tr>
+                    <td>Saba<br /><em>Maquereau | mackerel</em></td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Unagi<br /><em>Anguille grillé | Grilled eel</em></td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Ebi<br /><em>Crevette cuite | Cooked shrimp</em></td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td>Kanikama<br /><em>Simili crabe | Pollock</em></td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Escolar<br /><em>Rouvet | Butterfish</em></td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Tamago<br /><em>Omelette Japonnaise | Japanese omelet</em></td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Vegetarian<br /><em>Choix du chef | Chef's choice</em></td>
+                    <td>3.5</td>
+                </tr>
+                <tr>
+                    <td>Maritime<br /><em>Homard sauce wasabi | Lobster wasabi sauce</em></td>
+                    <td>7.5</td>
+                </tr>
+                <tr>
+                    <td>Spicy Maguro<br /><em>Thon épicé | Spicy tuna</em></td>
+                    <td>7.5</td>
+                </tr>
+                <tr>
+                    <td>Spicy Sake<br /><em>Saumon épicé | Spicy salmon</em></td>
+                    <td>7.25</td>
+                </tr>
+                <tr>
+                    <td>Spicy Kanikama<br /><em>Simili crabe épicé et caviar | Spicy pollock and caviar</em></td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td>Hotate<br /><em>Petoncle épicé | Spicy scallops</em></td>
+                    <td>6</td>
+                </tr>
+            </table>
+        </TabPanel>
     </div>
     );
 }
