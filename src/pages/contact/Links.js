@@ -32,7 +32,7 @@ const Links = () => {
             </ContactLinks>
             <ContactLinks>
                 <li>
-                    <StyledButton><StyledLink href="mailto:victorrose2015@gmail.com">info@avocadosushi.ca</StyledLink></StyledButton>
+                    <StyledButton><StyledLink href="mailto:info@avocadosushi.ca">info@avocadosushi.ca</StyledLink></StyledButton>
                 </li>
                 <li>
                     <StyledButton><StyledLink href="https://www.facebook.com/avocado.sushi.du.village">/Avocado.sushi.du.village</StyledLink></StyledButton>
