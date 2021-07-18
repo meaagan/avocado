@@ -9,42 +9,63 @@ import Img from 'gatsby-image'
 
 const SecondPage = () => (
   <StaticQuery
-    query={graphql`
-      query {
-        img1: file(
-          sourceInstanceName: { eq: "images" }
-          name: { eq: "nigiri" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 800, maxHeight: 800) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
+  query={graphql`
+  query {
+    img1: file(
+      sourceInstanceName: { eq: "images" }
+      name: { eq: "about_5" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 800, maxHeight: 800) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    img2: file(
+        sourceInstanceName: { eq: "images" }
+        name: { eq: "about_1" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 800, maxHeight: 800) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
-        img2: file(
-            sourceInstanceName: { eq: "images" }
-            name: { eq: "sushis" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 800, maxHeight: 800) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              }
-            }
-          }
-          img3: file(
-            sourceInstanceName: { eq: "images" }
-            name: { eq: "tartar" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 800, maxHeight: 800) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              }
-            }
-          }
-          
-
       }
-    `}
+      img3: file(
+        sourceInstanceName: { eq: "images" }
+        name: { eq: "about_6" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 800, maxHeight: 800) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
+      
+      img4: file(
+        sourceInstanceName: { eq: "images" }
+        name: { eq: "about_3" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 800, maxHeight: 800) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
+
+      img5: file(
+        sourceInstanceName: { eq: "images" }
+        name: { eq: "about_4" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 800, maxHeight: 800) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
+
+  }
+`}
     render={data => (
       <Layout>
         <SEO title="À Propos" />
@@ -53,21 +74,31 @@ const SecondPage = () => (
             <Image><Img fluid={data.img1.childImageSharp.fluid} /></Image>
             <Section>
               <h1>À Propos</h1>
-              <AboutText>Tout a commencé avec un vieux rêve d’entrepreneur en herbe, aux temps de l’école secondaire. Un vieux rêve partagé par deux amies d’enfance qui est maintenant devenu réalité: au cœur du village de Pointe-Claire, les deux complices ont lancé un chaleureux bistro spécialisé dans la création originale de sushis et de tartares. Sylvie Longtin, copropriétaire et chef sushi, et Dominique St-Laurent, copropriétaire et résidente du village de Pointe-Claire, ont aujourd’hui le plaisir de vous faire découvrir Avocado Sushi du Village.</AboutText>
+              <AboutText>
+                Tout a commencé à l’école secondaire, avec deux amies d'enfance rêvant qu'un jour, ils ouvriraient leur propre petit restaurant au cœur du village historique de Pointe-Claire.<br /><br/>
+                Et c'est ainsi, par un 5 octobre 2012 ensoleillé, que Sylvie Longtin, une chef sushi chevronnée qui exercait son métier à l'emblématique Willows Inn de Hudson pendant 12 ans, et Dominique St-Laurent, une femme d'affaires chevronnée de Pointe-Claire, ont ouvert pour la première fois Avocado Sushi du Village en tant que copropriétaires. Un rêve devenu réalité pour l'une des équipes de femmes les plus prospères de l'Ouest-de-l'Île.<br /><br />
+                Et il ne s'agissait pas de femmes comme les autres. Sylvie, une résidente de Sainte-Anne-de-Bellevue, a apporté créativité, fraîcheur et style à Avocado, offrant certains des plats de sushi les plus délicieux de l'île de Montréal. Connue pour sa spontanéité contagieuse et son originalité incorporant des ingrédients locaux et de saison, ses clients apprécient particulièrement ses assaisonnements, dont sa célèbre vinaigrette au sésame et sa sauce teriyaki.
+              </AboutText>
             </Section>
           </div>
           <div style={{display:"flex", alignItems:'center'}}>
             <Section>
               <AboutText>
-                Sylvie Longtin. Sylvie, chef sushi à l’auberge Willow Place Inn a charmé pendant 12 années sa clientèle fidèle du village de Hudson avec la fraîcheur et la créativité de ses sushis. Son rêve d’enfance était de devenir chef et d’opérer son propre restaurant. Elle est reconnue pour sa contagieuse spontanéité et sa grande originalité dans la confection de ses sushis et de ses tartares, offrant quotidiennement de nouvelles créations incorporant des ingrédients locaux et saisonniers. Ses clients apprécient particulièrement ses assaisonnements, dont sa fameuse vinaigrette au sésame et sa sauce teriyaki, maintenant disponibles en boutique.
-                <br /><br />Dominique St-Laurent. Dominique a grandi à Pointe-Claire et caressait le rêve d’ouvrir son propre café depuis l’âge de 12 ans. Après avoir vécu en Irlande, dans le village de Westmount et sur le Plateau Mont-Royal, Dominique est revenu vivre dans l’Ouest-de-l’Île. « Vivre dans une maison au cœur du village de Pointe-Claire, c’est le charme du confort urbain combiné à la vie de chalet sur le bord du Lac Saint-Louis », se confie-t-elle. « Mon but était de m’établir dans un quartier tranquille où il m’était possible de promener mon chien, attraper un café latte au passage, faire l’épicerie à pied, et trouver cadeaux et jouets originaux dans des petites boutiques ayant pignon sur rue. Le seul ingrédient manquant était un comptoir à sushi… et heureusement je connaissais le meilleur sushi chef! ».
+                Dominique a grandi à Pointe-Claire et rêvait d'ouvrir son propre bistro depuis l'âge de 12 ans. Après avoir vécu en Irlande, à Westmount et sur le Plateau Mont-Royal, Dominique est revenue dans l'Ouest-de-l'Île.<br /><br />
+                « Vivre dans une maison au cœur du village de Pointe-Claire, c’est le charme du confort urbain combiné à la vie de chalet sur le bord du Lac Saint-Louis », se confie-t-elle. « Mon but était de m’établir dans un quartier tranquille où il m’était possible de promener mon chien, prendre un café latte au passage, faire l’épicerie à pied, et trouver cadeaux et jouets originaux dans des petites boutiques ayant pignon sur rue. Le seul ingrédient manquant était un comptoir à sushi… et heureusement je connaissais la meilleure sushi chef! ». <br /><br />
+                Il a fallu beaucoup de travail et de planification pour donner vie à ce rêve. Une série de discussions légères sur l'idée de déraciner Sylvie de Hudson à Pointe-Claire pour lui apporter ses irrésistibles sushis a conduit à la rédaction d'un plan d'affaires, à l'analyse des règlements municipaux et à la recherche d'un emplacement.
               </AboutText>
             </Section>
             <Image><Img fluid={data.img2.childImageSharp.fluid} /></Image>
           </div>
-          <Triptych img1={data.img1.childImageSharp.fluid} img2={data.img2.childImageSharp.fluid} img3={data.img3.childImageSharp.fluid} />
-          <AboutText>Sylvie, la chef, s’appropria rapidement sa nouvelle cuisine, et l’équipe expérimentée du Willow contribua à faire du bistro un succès instantané. Il aurait été impossible d’imposer un succès si rapide - et surtout, de le maintenir - sans la complicité des employés qui ont été extraordinairement dédiés à offrir un service à la clientèle courtois et chaleureux, et sans une cuisine d’une fraîcheur et d’une qualité irréprochables. Les sushis de Sylvie relèvent tout simplement de la magie culinaire, mais l’enchantement provient aussi des baguettes du savoir- faire et du service à la clientèle, manipulées par les doigts de fée de Chantal, Danielle, Cathy, Tess et Charlie. Nous sommes fiers d’appartenir à cette équipe gagnante!</AboutText>
-          </StyledContainer>
+          <Triptych img1={data.img3.childImageSharp.fluid} img2={data.img4.childImageSharp.fluid} img3={data.img5.childImageSharp.fluid} />
+          <AboutText>
+            « Il y avait de nombreux espaces vacants, mais nous avons su que nous avions trouvé l'emplacement idéal lorsque le propriétaire du 270 Chemin Bord-du-lac nous a dit qu'il avait deux chats nommés Sushi et Sashimi ! », raconte Dominique. Quelques mois plus tard, le bail était signé et Avocado devenait une réalité.<br /><br />
+            Près de dix ans plus tard, Avocado continue d'être le lieu de rendez-vous des gens d'affaires locaux, des familles et même des étrangers qui ont envie de sushis (l'acteur hollywoodien Ben Stiller s'y est arrêté un soir alors qu'il était à Montréal pour un tournage). Certaines des soirées martini les plus élégantes ont eu lieu à l'Avocado au fil des ans, attirant régulièrement des foules de 5@7.
+            <br /><br />
+            Avocado sert des sushis traditionnels et des créations qui allient tradition, créativité et produits locaux du Québec, dont notre fameux sushi dessert. Du vin, de la bière et du saké sont également proposés pour accompagner le repas. Il est recommandé de réserver à l'avance.
+          </AboutText>
+        </StyledContainer>
       </Layout>
     )}
   />

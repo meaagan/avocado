@@ -38,7 +38,7 @@ const Navbar = () => {
   )
 
   const navLinks = [
-    // { title: `about`, path: `/about` },
+    { title: `about`, path: `/about` },
     { title: `contact`, path: `/contact` },
     { title: `order online`, path: `https://order.chkplzapp.com/avocado/menus`},
     { title: `English`, path: `/` },
@@ -75,7 +75,7 @@ const Navbar = () => {
             <Brand><HomeLink to="/"><Img fluid={data.brand.childImageSharp.fluid} /></HomeLink></Brand>
             <Hidden smDown>
               <NavbarList component="nav" aria-labelledby="main navigation">
-                {/* <StyledLink to='/about' key='about'><NavButton>About</NavButton></StyledLink> */}
+                <StyledLink to='/about' key='about'><NavButton>About</NavButton></StyledLink>
                 <StyledLink to='/contact' key='contact'><NavButton>Contact</NavButton></StyledLink>
                 <a href='https://order.chkplzapp.com/avocado/menus'><OrderButton variant="outlined">Order Online</OrderButton></a>
                 <ul className="languages">
