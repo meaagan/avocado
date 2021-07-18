@@ -7,7 +7,7 @@ import Header from './homepage/Header'
 import News from './homepage/News'
 import Oceanwise from './homepage/Oceanwise'
 import Menu from './homepage/Menu'
-import Instagram from './homepage/Instagram'
+// import Instagram from './homepage/Instagram'
 import ImageBreak from './homepage/ImageBreak'
 
 import { ThemeProvider } from 'styled-components';
@@ -24,7 +24,7 @@ const IndexPage = () => {
       <ImageBreak />
       <Menu />
       <Oceanwise />
-      <Instagram />
+      {/* <Instagram /> */}
       </ThemeProvider>
     </Layout>
   )
