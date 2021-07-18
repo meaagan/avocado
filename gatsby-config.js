@@ -29,12 +29,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: 289365524,
-      },
-    },
-    {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
