@@ -106,7 +106,7 @@ function MenuTabs() {
                     <td>4</td>
                 </tr>
                 <tr>
-                    <td>Salade Japonaise | Japenese Salad</td>
+                    <td>Salade Japonaise | Japanese Salad</td>
                     <td>5 / 8</td>
                 </tr>
                 <tr>
