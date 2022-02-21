@@ -7,7 +7,6 @@ const Menu = () => {
   const data = useStaticQuery(graphql`
     {
       file(extension: {eq: "pdf"}) {
-        id
         publicURL
       }
     }
