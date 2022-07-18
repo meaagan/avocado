@@ -6,7 +6,7 @@ const News = () => {
     return(
         <StyledContainer style={{textAlign:'center'}}>
             <h2>Annonces</h2>
-            <h3>Nous sommes fermés le mardi 28 juin 2022.</h3>
+            <h3>Nous avons apporté des modifications à notre tarification. Veuillez vous référer à notre nouveau menu ci-dessous.</h3>
         </StyledContainer>
     )
 }

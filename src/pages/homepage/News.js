@@ -6,7 +6,7 @@ const News = () => {
     return(
         <StyledContainer style={{textAlign:'center'}}>
             <h2>Announcements</h2>
-            <h3>We are closed Tuesday, June 28 2022</h3>
+            <h3>We have made changes to our pricing. Please refer to our new menu below.</h3>
         </StyledContainer>
     )
 }
