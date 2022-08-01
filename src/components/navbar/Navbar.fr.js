@@ -40,7 +40,7 @@ const Navbar = () => {
   const navLinks = [
     { title: `À Propos`, path: `/fr/about` },
     { title: `contact`, path: `/fr/contact` },
-    { title: `commander en ligne`, path: `https://order.chkplzapp.com/avocado/menus`},
+    { title: `commander en ligne`, path: `https://avocadosushi-restaurant.order-online.ai/#/`},
     { title: `English`, path: `/` },
     { title: `Français`, path: `/fr` }
   ]
@@ -78,7 +78,7 @@ const Navbar = () => {
               <NavbarList component="nav" aria-labelledby="main navigation">
                 <StyledLink to='/fr/about' key='about'><NavButton>À Propos</NavButton></StyledLink>
                 <StyledLink to='/fr/contact' key='contact'><NavButton>Contact</NavButton></StyledLink>
-                <a href='https://order.chkplzapp.com/avocado/menus'><OrderButton variant="outlined">commander en ligne</OrderButton></a>
+                <a href='https://avocadosushi-restaurant.order-online.ai/#/'><OrderButton variant="outlined">commander en ligne</OrderButton></a>
                 <ul className="languages">
                   <li><Link to="/">English</Link></li>
                   <li><Link to="/fr">Français</Link></li>
