@@ -55,7 +55,7 @@ const Navbar = () => {
               <NavbarList component="nav" aria-labelledby="main navigation">
                 <StyledLink to='/fr/about' key='about'><NavButton>À Propos</NavButton></StyledLink>
                 <StyledLink to='/fr/contact' key='contact'><NavButton>Contact</NavButton></StyledLink>
-                <a href='https://avocadosushi-restaurant.order-online.ai/#/'><OrderButton variant="outlined">commander en ligne</OrderButton></a>
+                <a href='https://widgets.libroreserve.com/WEB/QC014310225040/book?lang=fr' target='_blank'><OrderButton variant="outlined">commander en ligne</OrderButton></a>
                 <ul className="languages">
                   <li><Link to="/">English</Link></li>
                   <li><Link to="/fr">Français</Link></li>

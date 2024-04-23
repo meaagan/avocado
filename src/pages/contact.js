@@ -32,7 +32,6 @@ const Contact = () => (
         <Layout>
           <StyledBackground
             Tag="section"
-            // className={className}
             fluid={data.background.childImageSharp.fluid}
             backgroundColor={`#040e18`}
           >
