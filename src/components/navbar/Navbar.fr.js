@@ -2,8 +2,9 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components';
+import { withPrefix } from "gatsby"
 
-import { Toolbar, Hidden, Button } from '@mui/material';
+import { Toolbar, Hidden } from '@mui/material';
 
 import SideDrawer from "./SideDrawer"
 import HideOnScroll from "./HideOnScroll"
@@ -40,7 +41,7 @@ const Navbar = () => {
   const navLinks = [
     { title: `À Propos`, path: `/fr/about` },
     { title: `contact`, path: `/fr/contact` },
-    { title: `commander en ligne`, path: `https://avocadosushi-restaurant.order-online.ai/#/`},
+    { title: `commander en ligne`, path: `https://widgets.libroreserve.com/WEB/QC014310225040/book?lang=fr`},
     { title: `English`, path: `/` },
     { title: `Français`, path: `/fr` }
   ]

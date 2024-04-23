@@ -40,7 +40,7 @@ const Navbar = () => {
   const navLinks = [
     { title: `about`, path: `/about` },
     { title: `contact`, path: `/contact` },
-    { title: `order online`, path: `https://avocadosushi-restaurant.order-online.ai/#/`},
+    { title: `order online`, path: `https://widgets.libroreserve.com/WEB/QC014310225040/book?lang=en`},
     { title: `English`, path: `/` },
     { title: `Français`, path: `/fr` }
   ]
