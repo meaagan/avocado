@@ -1,24 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '@mui/material/Button';
 
-import Button from '@material-ui/core/Button';
-import { withStyles } from "@material-ui/core/styles"
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faPhone, faEnvelope, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
-// import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPhone, faEnvelope, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Links = () => {
-    const StyledButton = withStyles({
-        root: {
-            fontFamily:'inherit',
-            color: 'inherit',
-            backgroundColor: 'none',
-              '&:hover': {
-                backgroundColor: 'rgb(0, 0, 0, 0.1)',
-              },
-          },
-        })(Button);  
+    // const StyledButton = withStyles({
+    //     root: {
+    //         fontFamily:'inherit',
+    //         color: 'inherit',
+    //         backgroundColor: 'none',
+    //           '&:hover': {
+    //             backgroundColor: 'rgb(0, 0, 0, 0.1)',
+    //           },
+    //       },
+    //     })(Button);  
 
     return(
         <LinkContainer>
@@ -32,13 +30,13 @@ const Links = () => {
             </ContactLinks>
             <ContactLinks>
                 <li>
-                    <StyledButton><StyledLink href="mailto:info@avocadosushi.ca">info@avocadosushi.ca</StyledLink></StyledButton>
+                    <Button><StyledLink href="mailto:info@avocadosushi.ca">info@avocadosushi.ca</StyledLink></Button>
                 </li>
                 <li>
-                    <StyledButton><StyledLink href="https://www.facebook.com/avocado.sushi.du.village">/Avocado.sushi.du.village</StyledLink></StyledButton>
+                    <Button><StyledLink href="https://www.facebook.com/avocado.sushi.du.village">/Avocado.sushi.du.village</StyledLink></Button>
                 </li>
                 <li>
-                    <StyledButton><StyledLink href="https://www.instagram.com/avocadosushiduvillage/" target="_blank">@avocadosushiduvillage</StyledLink></StyledButton>
+                    <Button><StyledLink href="https://www.instagram.com/avocadosushiduvillage/" target="_blank">@avocadosushiduvillage</StyledLink></Button>
                 </li>
             </ContactLinks>
         </LinkContainer>

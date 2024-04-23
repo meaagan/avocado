@@ -1,5 +1,6 @@
-import React from "react"
-import { TextField, Button } from '@material-ui/core'
+import React from "react";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import styled from 'styled-components';
 
 const encode = (data) => {

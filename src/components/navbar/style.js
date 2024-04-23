@@ -3,8 +3,9 @@ import { Link as GatsbyLink } from "gatsby";
 import {
   AppBar,
   Container,
-  List
-} from "@material-ui/core";
+  List,
+  Button
+} from '@mui/material';
 
 export const NavbarList = styled(List)`
   display: flex;
@@ -33,3 +34,23 @@ export const Brand = styled.figure`
   padding-top: 5px;
   width: 130px;
 `;
+
+
+export const OrderButton = styled(Button)`
+  fontFamily:'inherit';
+  color: 'rgba(255, 255, 255, 0.87)';
+  backgroundColor: 'none';
+    '&:hover': {
+      backgroundColor: 'rgba(255, 255, 255, 0.1)';
+    };
+  border: '1px solid rgba(255,255, 255, 0.23)';
+  `;
+
+  export const NavButton = styled(Button)`
+  fontFamily:'inherit';
+  color: 'rgba(255, 255, 255, 0.87)';
+  backgroundColor: 'none';
+    '&:hover': {
+      backgroundColor: 'rgba(255, 255, 255, 0.1)';
+    };
+  `;

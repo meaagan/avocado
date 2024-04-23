@@ -5,24 +5,22 @@ import {
     List,
     ListItem,
     ListItemText
-  } from "@material-ui/core";
-import { Menu } from "@material-ui/icons"
+  } from '@mui/material';
+import Menu from '@mui/material/Menu';
 import { useState } from "react"
-import { makeStyles } from "@material-ui/core/styles"
 
-const useStyles = makeStyles({
-    list: {
-      width: 250,
-    },
-    linkText: {
-      textDecoration: `none`,
-      textTransform: `uppercase`,
-      color: `black`,
-    },
-  })
+// const useStyles = makeStyles({
+//     list: {
+//       width: 250,
+//     },
+//     linkText: {
+//       textDecoration: `none`,
+//       textTransform: `uppercase`,
+//       color: `black`,
+//     },
+//   })
 
 const SideDrawer = ({ navLinks }) => {
-    const classes = useStyles();
     const [state, setState] = useState({ right: false })
     
     const toggleDrawer = (anchor, open) => (event) => {
@@ -37,14 +35,13 @@ const SideDrawer = ({ navLinks }) => {
 
     const sideDrawerList = anchor => (
         <div
-          className={classes.list}
           role="presentation"
           onClick={toggleDrawer(anchor, false)}
           onKeyDown={toggleDrawer(anchor, false)}
         >
           <List component="nav">
             {navLinks.map(({ title, path }) => (
-              <a href={path} key={title} className={classes.linkText}>
+              <a href={path} key={title}>
                 <ListItem button>
                   <ListItemText primary={title} />
                 </ListItem>

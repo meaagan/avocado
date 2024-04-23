@@ -3,9 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components';
 
-import { Toolbar, Hidden } from "@material-ui/core";
-import Button from '@material-ui/core/Button';
-import { withStyles } from "@material-ui/core/styles"
+import { Toolbar, Hidden } from '@mui/material';
 
 import SideDrawer from "./SideDrawer"
 import HideOnScroll from "./HideOnScroll"
@@ -14,7 +12,9 @@ import {
   NavbarList,
   NavContainer,
   AppBarStyled,
-  StyledLink 
+  StyledLink,
+  OrderButton,
+  NavButton
 } from "./style"
 import './navbar.css'
 
@@ -44,29 +44,6 @@ const Navbar = () => {
     { title: `English`, path: `/` },
     { title: `Français`, path: `/fr` }
   ]
-
-  const OrderButton = withStyles({
-    root: {
-        fontFamily:'inherit',
-        color: 'rgba(255, 255, 255, 0.87)',
-        backgroundColor: 'none',
-          '&:hover': {
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-          },
-        border: '1px solid rgba(255,255, 255, 0.23)',
-      },
-    })(Button);
-
-    const NavButton = withStyles({
-      root: {
-          fontFamily:'inherit',
-          color: 'rgba(255, 255, 255, 0.87)',
-          backgroundColor: 'none',
-            '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            },
-        },
-      })(Button);
   return (
     <HideOnScroll>
       <AppBarStyled position="fixed">
