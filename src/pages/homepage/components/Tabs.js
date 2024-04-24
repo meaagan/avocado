@@ -4,8 +4,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
-
 import Menu1 from './Menu1'
+import Menu2 from './Menu2'
+import Menu3 from './Menu3'
 import Salads from './Salads'
 import Maki from './Maki'
 import Table from './Table'
@@ -67,9 +68,9 @@ function MenuTabs() {
             className='tabs'
             scrollButtons="on"
         >
-            <Tab label="Page 1" {...a11yProps(0)} />
-            <Tab label="Page 2" {...a11yProps(1)} />
-            <Tab label="Page 3" {...a11yProps(2)} />
+            <Tab label="Lunch" {...a11yProps(0)} />
+            <Tab label="Page 1" {...a11yProps(1)} />
+            <Tab label="Page 2" {...a11yProps(2)} />
         </Tabs>
         </AppBar>
         <TabPanel value={value} index={0} className='panel'>
@@ -77,10 +78,12 @@ function MenuTabs() {
             <Menu1 />
         </TabPanel>
         <TabPanel value={value} index={1} className='panel'>
-
+            <Table />
+            <Menu2 />
         </TabPanel>
         <TabPanel value={value} index={2} className='panel'>
-
+            <Hosomaki />
+            <Menu3 />
         </TabPanel>
     </div>
     );

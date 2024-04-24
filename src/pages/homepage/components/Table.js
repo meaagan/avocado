@@ -29,7 +29,7 @@ const Table = () => (
           }
           img3: file(
             sourceInstanceName: { eq: "images" }
-            name: { eq: "apero3" }
+            name: { eq: "combo4" }
           ) {
             childImageSharp {
               fluid(maxWidth: 500, maxHeight: 500) {

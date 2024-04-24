@@ -64,6 +64,7 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     cursor: pointer;
+    color: white;
   }
 `;
 

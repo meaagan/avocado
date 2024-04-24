@@ -19,7 +19,7 @@ const Maki = () => (
         }
         img2: file(
             sourceInstanceName: { eq: "images" }
-            name: { eq: "specialty2" }
+            name: { eq: "tartare2" }
           ) {
             childImageSharp {
               fluid(maxWidth: 500, maxHeight: 500) {

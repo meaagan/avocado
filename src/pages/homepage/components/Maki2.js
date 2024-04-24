@@ -9,7 +9,7 @@ const Maki2 = () => (
       query {
         img1: file(
           sourceInstanceName: { eq: "images" }
-          name: { eq: "combo3" }
+          name: { eq: "appetizer1" }
         ) {
           childImageSharp {
             fluid(maxWidth: 500, maxHeight: 500) {
@@ -19,7 +19,7 @@ const Maki2 = () => (
         }
         img2: file(
             sourceInstanceName: { eq: "images" }
-            name: { eq: "apero1" }
+            name: { eq: "tartare1" }
           ) {
             childImageSharp {
               fluid(maxWidth: 500, maxHeight: 500) {

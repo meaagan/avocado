@@ -4,13 +4,15 @@ import {
   AppBar,
   Container,
   List,
-  Button
+  Button,
+  Link
 } from '@mui/material';
 
 export const NavbarList = styled(List)`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  color: white;
 `
 
 export const NavContainer = styled(Container)`
@@ -44,13 +46,16 @@ export const OrderButton = styled(Button)`
       backgroundColor: 'rgba(255, 255, 255, 0.1)';
     };
   border: '1px solid rgba(255,255, 255, 0.23)';
-  `;
+`;
 
   export const NavButton = styled(Button)`
   fontFamily:'inherit';
-  color: 'rgba(255, 255, 255, 0.87)';
   backgroundColor: 'none';
     '&:hover': {
       backgroundColor: 'rgba(255, 255, 255, 0.1)';
     };
   `;
+
+export const HomeLink = styled(Link)`
+  text-decoration: none;
+`

@@ -8,7 +8,7 @@ const Menu1 = () => (
       query {
         img1: file(
           sourceInstanceName: { eq: "images" }
-          name: { eq: "menu1" }
+          name: { eq: "menu3" }
         ) {
           childImageSharp {
             fluid(maxWidth: 2000) {

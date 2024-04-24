@@ -7,20 +7,9 @@ import { faPhone, faEnvelope, faMapMarkedAlt } from '@fortawesome/free-solid-svg
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Links = () => {
-    // const StyledButton = withStyles({
-    //     root: {
-    //         fontFamily:'inherit',
-    //         color: 'inherit',
-    //         backgroundColor: 'none',
-    //           '&:hover': {
-    //             backgroundColor: 'rgb(0, 0, 0, 0.1)',
-    //           },
-    //       },
-    //     })(Button);  
-
     return(
         <LinkContainer>
-            <ContactLinks style={{paddingTop:'7px'}}>
+            <ContactLinks style={{paddingTop:'2%'}}>
                 <li>
                     270 ch. Bord-du-Lac - Lakeshore<br />Pointe-Claire, Quebec<br />H9S 4K9
                 </li>
@@ -51,18 +40,20 @@ const LinkContainer = styled.div`
         display: block;
         width: 100%;
         margin: 0 auto;
+        text-align: center;
     }
 `
+
+const StyledLink = styled.a`
+    text-decoration: none;
+    color: black;
+`
+
 
 const ContactLinks = styled.ul`
     list-style: none;
     padding-left:0;
     color:black;
-`
-
-const StyledLink = styled.a`
-    text-decoration: none;
-    color: inherit;
 `
 
 export default Links
