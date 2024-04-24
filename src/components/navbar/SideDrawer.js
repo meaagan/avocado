@@ -4,21 +4,12 @@ import {
     IconButton,
     List,
     ListItem,
-    ListItemText
+    ListItemText,
+    Menu
   } from '@mui/material';
-import Menu from '@mui/material/Menu';
+  import styled from 'styled-components';
 import { useState } from "react"
-
-// const useStyles = makeStyles({
-//     list: {
-//       width: 250,
-//     },
-//     linkText: {
-//       textDecoration: `none`,
-//       textTransform: `uppercase`,
-//       color: `black`,
-//     },
-//   })
+import MenuIcon from '@mui/icons-material/Menu';
 
 const SideDrawer = ({ navLinks }) => {
     const [state, setState] = useState({ right: false })
@@ -41,11 +32,11 @@ const SideDrawer = ({ navLinks }) => {
         >
           <List component="nav">
             {navLinks.map(({ title, path }) => (
-              <a href={path} key={title}>
+              <StyledLink href={path} key={title}>
                 <ListItem>
-                  <ListItemText primary={title} />
+                  <ListItemText disableTypography={false} primary={title} />
                 </ListItem>
-              </a>
+              </StyledLink>
             ))}
           </List>
         </div>
@@ -54,7 +45,7 @@ const SideDrawer = ({ navLinks }) => {
     return (
         <React.Fragment>
           <IconButton edge="start" onClick={toggleDrawer("right", true)} aria-label="menu">
-            Menu
+            <MenuIcon />
             <Menu />
           </IconButton>
             <Drawer
@@ -68,4 +59,11 @@ const SideDrawer = ({ navLinks }) => {
         </React.Fragment>
     )
 }
+
+const StyledLink = styled.a`
+    color: black;
+    font-family: 'inherit';
+    text-decoration: none;
+`
+
 export default SideDrawer
