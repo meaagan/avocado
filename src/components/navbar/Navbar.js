@@ -38,9 +38,9 @@ const Navbar = () => {
   )
 
   const navLinks = [
-    { title: `about`, path: `/about` },
-    { title: `contact`, path: `/contact` },
-    { title: `order online`, path: `https://widgets.libroreserve.com/WEB/QC014310225040/book?lang=en`},
+    { title: `About`, path: `/about` },
+    { title: `Contact`, path: `/contact` },
+    { title: `Order online`, path: `https://widgets.libroreserve.com/WEB/QC014310225040/book?lang=en`},
     { title: `English`, path: `/` },
     { title: `Français`, path: `/fr` }
   ]
@@ -61,7 +61,7 @@ const Navbar = () => {
                 </ul>
               </NavbarList>
             </Hidden>
-            <Hidden mdUp>
+            <Hidden smUp>
               <SideDrawer navLinks={navLinks} />
             </Hidden>
           </NavContainer>

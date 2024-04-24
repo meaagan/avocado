@@ -105,11 +105,11 @@ Avocado serves traditional sushi and creations that combine tradition, creativit
 )
 
 const Image = styled.figure`
-    width: 100%;
+  width: 100%;
 `
 
 const StyledContainer = styled(Container)`
-margin-top: 5%;
+  margin-top: 5%;
 `
 const AboutText = styled.p`
   ${props => props.theme.font_size.small};
@@ -118,7 +118,6 @@ const AboutText = styled.p`
 const Section = styled.div`
   width: 75%;
 `
-
 
 
 

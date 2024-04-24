@@ -42,7 +42,7 @@ const SideDrawer = ({ navLinks }) => {
           <List component="nav">
             {navLinks.map(({ title, path }) => (
               <a href={path} key={title}>
-                <ListItem button>
+                <ListItem>
                   <ListItemText primary={title} />
                 </ListItem>
               </a>
@@ -54,6 +54,7 @@ const SideDrawer = ({ navLinks }) => {
     return (
         <React.Fragment>
           <IconButton edge="start" onClick={toggleDrawer("right", true)} aria-label="menu">
+            Menu
             <Menu />
           </IconButton>
             <Drawer

@@ -40,8 +40,8 @@ const Navbar = () => {
 
   const navLinks = [
     { title: `À Propos`, path: `/fr/about` },
-    { title: `contact`, path: `/fr/contact` },
-    { title: `commander en ligne`, path: `https://widgets.libroreserve.com/WEB/QC014310225040/book?lang=fr`},
+    { title: `Contact`, path: `/fr/contact` },
+    { title: `Commander en ligne`, path: `https://widgets.libroreserve.com/WEB/QC014310225040/book?lang=fr`},
     { title: `English`, path: `/` },
     { title: `Français`, path: `/fr` }
   ]
