@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '@mui/material/Button';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhone, faEnvelope, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faPhone, faEnvelope, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons'
+// import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Links = () => {
     return(
