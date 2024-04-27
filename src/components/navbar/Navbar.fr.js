@@ -42,7 +42,7 @@ const Navbar = () => {
     { title: `À Propos`, path: `/fr/about` },
     { title: `Contact`, path: `/fr/contact` },
     { title: `Commander en ligne`, path: `https://avocadosushi-restaurant.order-online.ai/#/`},
-    { title: `Réserver en ligne`, path: `https://widgets.libroreserve.com/WEB/QC014310225040/book?lang=fr`},
+    { title: `Réserver en ligne`, path: `https://widgets.libroreserve.com/WEB/QC017111388322/book`},
     { title: `English`, path: `/` },
     { title: `Français`, path: `/fr` }
   ]
@@ -58,7 +58,7 @@ const Navbar = () => {
                 <StyledLink to='/fr/about' key='about'><NavButton>À Propos</NavButton></StyledLink>
                 <StyledLink to='/fr/contact' key='contact'><NavButton>Contact</NavButton></StyledLink>
                 <a href='https://avocadosushi-restaurant.order-online.ai/#/' target='_blank'><OrderButton variant="contained">commander en ligne</OrderButton></a>
-                <a href='https://widgets.libroreserve.com/WEB/QC014310225040/book?lang=fr' target='_blank'><OrderButton variant="contained">réserver en ligne</OrderButton></a>
+                <a href='https://widgets.libroreserve.com/WEB/QC017111388322/book' target='_blank'><OrderButton variant="contained">réserver en ligne</OrderButton></a>
                 <ul className="languages">
                   <li><Link to="/">English</Link></li>
                   <li><Link to="/fr">Français</Link></li>
