@@ -8,7 +8,6 @@ import News from './homepage/News'
 import Oceanwise from './homepage/Oceanwise'
 import Menu from './homepage/Menu'
 import ImageBreak from './homepage/ImageBreak'
-
 import { ThemeProvider } from 'styled-components';
 import theme from '@styles/theme';
 
@@ -21,8 +20,8 @@ const IndexPage = () => {
       <News />
       <About />
       <ImageBreak />
-      <Menu />
       <Oceanwise />
+      <Menu />
       </ThemeProvider>
     </Layout>
   )

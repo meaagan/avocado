@@ -7,7 +7,6 @@ const Instagram = () => {
     return(
         <StyledContainer>
             <h2>Follow us on Instagram</h2>
-            {/* <Posts /> */}
         </StyledContainer>
     )
 }

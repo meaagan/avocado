@@ -1,7 +1,9 @@
 import React from 'react';
 import { Container } from '@components/global'
 import { useStaticQuery, graphql } from 'gatsby'
-import MenuTabs from '../components/Tabs'
+import Table from '../components/Table'
+import Hosomaki from '../components/Hosomaki'
+import Maki2 from '../components/Maki2'
 
 const Menu = () => {
   const data = useStaticQuery(graphql`
@@ -15,7 +17,9 @@ const Menu = () => {
       <Container>
           <h1>Menu</h1>
           <p><a href={data.file.publicURL} target="_blank">Cliquez ici pour télécharger le menu complet</a></p>
-          <MenuTabs />
+          <div class="gallery">
+          <Maki2 /><Table /><Hosomaki />
+        </div>
       </Container>
     );
 }

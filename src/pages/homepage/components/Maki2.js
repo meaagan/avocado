@@ -1,5 +1,4 @@
 import React from "react"
-
 import Triptych from "@components/Triptych"
 import { StaticQuery, graphql } from 'gatsby'
 
