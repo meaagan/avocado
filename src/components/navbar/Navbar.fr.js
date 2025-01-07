@@ -42,7 +42,7 @@ const Navbar = () => {
     { title: `À Propos`, path: `/fr/about` },
     { title: `Contact`, path: `/fr/contact` },
     { title: `Commander en ligne`, path: `https://avocadosushi-restaurant.order-online.ai/#/`},
-    { title: `Réserver en ligne`, path: `https://widgets.libroreserve.com/WEB/QC014310225040/book?lang=fr`},
+    { title: `Réserver en ligne`, path: `https://widgets.libroreserve.com/WEB/QC017111388322/book`},
     { title: `English`, path: `/` },
     { title: `Français`, path: `/fr` }
   ]
