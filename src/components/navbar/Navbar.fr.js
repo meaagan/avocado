@@ -59,7 +59,7 @@ const Navbar = () => {
                 <StyledLink to='/fr/contact' key='contact'><NavButton>Contact</NavButton></StyledLink>
                 <div class="buttons">
                   <a href='https://avocadosushi-restaurant.order-online.ai/#/' target='_blank' rel="noreferrer"><OrderButton variant="contained">commander</OrderButton></a>
-                  <a href='https://widgets.libroreserve.com/WEB/QC014310225040/book?lang=fr' target='_blank' rel="noreferrer"><OrderButton variant="contained">réserver</OrderButton></a>
+                  <a href='https://widgets.libroreserve.com/WEB/QC017111388322/book?lang=fr' target='_blank' rel="noreferrer"><OrderButton variant="contained">réserver</OrderButton></a>
                 </div>
                 <ul className="languages">
                   <li><Link to="/">English</Link></li>
