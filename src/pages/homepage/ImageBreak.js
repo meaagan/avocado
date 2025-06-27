@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image';
- 
+import { StaticImage } from "gatsby-plugin-image"
+
 const ImageBreak = () => {
   const data = useStaticQuery(
     graphql`
@@ -30,7 +30,7 @@ const ImageBreak = () => {
   )
 };
 
-const Parallax = styled(BackgroundImage)`
+const Parallax = styled(StaticImage)`
   background-position: 60% 50%; 
   background-repeat: no-repeat; 
   background-size: cover; 

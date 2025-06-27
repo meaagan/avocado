@@ -6,12 +6,15 @@ import { Container } from '@components/global'
 import styled from 'styled-components'
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import BackgroundImage from 'gatsby-background-image'
-import Form from './contact/Form'
+import { StaticImage } from "gatsby-plugin-image"
 import AMap from './contact/AMap'
 import Links from './contact/Links'
+import { useContent } from '../hooks/useContent'
 
-const Contact = () => (
+const Contact = () => {
+  const { content, language } = useContent()
+  
+  return (
     <StaticQuery
       query={graphql`
         query {
@@ -25,7 +28,6 @@ const Contact = () => (
               }
             }
           }
-
         }
       `}
       render={data => (
@@ -35,12 +37,13 @@ const Contact = () => (
             fluid={data.background.childImageSharp.fluid}
             backgroundColor={`#040e18`}
           >
-            <SEO title="Contact" />
+            <SEO title={language === 'fr' ? 'Contact' : 'Contact'} />
             <ContactContainer>
               <Left>
-                <h1 style={{textAlign:'center'}}>Contact</h1>
+                <h1 style={{textAlign:'center'}}>
+                  {language === 'fr' ? 'Contact' : 'Contact'}
+                </h1>
                 <Links />
-                {/* <Form /> */}
               </Left>
               <AMap />
             </ContactContainer>
@@ -48,9 +51,10 @@ const Contact = () => (
         </Layout>
       )}
     />
-)
+  )
+}
 
-const StyledBackground = styled(BackgroundImage)`
+const StyledBackground = styled(StaticImage)`
   width: 100%;
   height: 100%;
 
