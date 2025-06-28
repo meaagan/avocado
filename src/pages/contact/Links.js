@@ -1,4 +1,3 @@
-// src/pages/contact/Links.js
 import React from 'react'
 import styled from 'styled-components'
 import Button from '@mui/material/Button'
@@ -10,7 +9,7 @@ const Links = () => {
   return (
     <LinkContainer>
       <ContactLinks style={{paddingTop:'2%'}}>
-        <li>
+        <li style={{ whiteSpace: 'pre-line' }}>
           {content.contact?.address || (
             language === 'fr' 
               ? "270 ch. Bord-du-Lac - Lakeshore\nPointe-Claire, Quebec\nH9S 4K9"

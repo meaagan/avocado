@@ -1,71 +1,6 @@
-import styled from 'styled-components';
-import { Link as GatsbyLink } from "gatsby"; // Make sure to import from gatsby
-import {
-  AppBar,
-  Container,
-  List,
-  Button,
-  // Remove Link import from Material-UI
-} from '@mui/material';
+import styled from 'styled-components'
 
-export const NavbarList = styled(List)`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  color: white;
-`
-
-export const NavContainer = styled(Container)`
-  display: flex;
-  justify-content: space-between;
-`
-
-export const AppBarStyled = styled(AppBar) `
-  margin-bottom: 100%;
-`;
-
-export const StyledLink = styled(GatsbyLink)`
-  margin: 0px 0.75em;
-  ${props => props.theme.font_size.small};
-  text-decoration: none;
-  padding-left: 0.25em;
-  padding-right: 0.25em;
-`;
-
-export const Brand = styled.figure`
-  padding-top: 5px;
-  width: 130px;
-`;
-
-// Fix HomeLink to use Gatsby Link instead of Material-UI Link
-export const HomeLink = styled(GatsbyLink)`
-  text-decoration: none;
-  display: block;
-`
-
-// Keep old buttons for backward compatibility if needed
-export const OrderButton = styled(Button)`
-  font-family: 'inherit';
-  color: rgba(255, 255, 255, 0.87);
-  background-color: transparent;
-  
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  border: 1px solid rgba(255, 255, 255, 0.23);
-`;
-
-export const NavButton = styled(Button)`
-  font-family: 'inherit';
-  background-color: transparent;
-  
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-`;
-
-// Add the new custom button components
+// Custom button component that matches your website's style
 export const CustomNavButton = styled.a`
   display: inline-block;
   padding: 12px 24px;
@@ -105,6 +40,7 @@ export const CustomNavButton = styled.a`
   }
 `
 
+// Alternative solid version for primary actions
 export const PrimaryNavButton = styled.a`
   display: inline-block;
   padding: 12px 24px;
@@ -142,6 +78,7 @@ export const PrimaryNavButton = styled.a`
   }
 `
 
+// Simple text button for regular navigation items
 export const TextNavButton = styled.a`
   display: inline-block;
   padding: 12px 16px;

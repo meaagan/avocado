@@ -5,14 +5,24 @@ module.exports = {
     author: `Meagan Butters`
   },
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-i18n`,
-      options: {
-        langKeyDefault: 'en',
-        langKeyForNull: 'en',
-        prefixDefault: false,
-      },
+      options: {
+        langKeyDefault: 'en',
+        langKeyForNull: 'en',
+        prefixDefault: false,
+      },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,
@@ -50,8 +60,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -16,15 +16,27 @@ const IndexPage = ({ pageContext }) => {
   const { content, language } = useContent()
   
   return (
-    <Layout pageContext={pageContext}>
+   <Layout>
       <ThemeProvider theme={theme}>
-        <SEO title={language === 'fr' ? 'Accueil' : 'Home'} />
+      <SEO title="Home" />
+      <section id="home">
         <Header />
+      </section>
+      {/* <section id="news">
         <News />
+      </section> */}
+      <section id="about">
         <About />
+      </section>
+      <section id="gallery">
         <ImageBreak />
+      </section>
+      <section id="oceanwise">
         <Oceanwise />
+      </section>
+      <section id="menu">
         <Menu />
+      </section>
       </ThemeProvider>
     </Layout>
   )

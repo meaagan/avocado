@@ -8,7 +8,6 @@ import { Container } from '@components/global'
 import { useContent } from '../hooks/useContent'  // Updated import
 
 const SecondPage = () => {
-  // Get content for current language
   const { content, language } = useContent()
   
   return (
@@ -110,10 +109,10 @@ const SecondPage = () => {
       
       render={data => (
         <Layout>
-          <SEO title={content.about?.title || (language === 'fr' ? 'À Propos' : 'About')} />
+          <SEO title={content.about?.title || (language === 'fr' ? 'Notre Histoire' : 'Our Story')} />
           <StyledContainer>
             {/* CMS-controlled title */}
-            <h1>{content.about?.title || (language === 'fr' ? 'À Propos' : 'About')}</h1>
+            <h1>{content.about?.title || (language === 'fr' ? 'Notre Histore' : 'Our Story')}</h1>
             
             {/* CMS-controlled description */}
             <AboutText>
@@ -177,9 +176,13 @@ const SecondPage = () => {
   )
 }
 
-// Keep all your existing styled components
 const StyledContainer = styled(Container)`
   margin-top: 5%;
+  padding-top: 100px; /* Add this line to push content below navbar */
+  
+  @media (max-width: ${props => props.theme.screen.md}) {
+    padding-top: 120px; /* Slightly more padding on mobile if needed */
+  }
 `
 
 const AboutText = styled.p`

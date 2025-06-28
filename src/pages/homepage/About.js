@@ -1,4 +1,3 @@
-// src/pages/homepage/About.js
 import React from 'react'
 import { Container } from '@components/global'
 import styled from 'styled-components'

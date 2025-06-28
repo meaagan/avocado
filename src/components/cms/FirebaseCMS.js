@@ -56,7 +56,7 @@ const FirebaseCMS = () => {
           description: "Avocado sushi was founded on the 5th of October, 2012. We serve traditional sushi and traditional creations fusing tradition, creativity and local Quebec products, including our famous sushi desserts."
         },
         about: {
-          title: "About",
+          title: "Our Story",
           description: "It all began in high school, with two childhood friends dreaming that one day, they would open their own cozy restaurant in the heart of historic Pointe Claire Village."
         },
         announcements: {
@@ -85,7 +85,7 @@ const FirebaseCMS = () => {
           description: "Avocado a vu le jour le 5 octobre 2012. Nous servons des sushis traditionnels et des créations fusionnant tradition, créativité et produits québécois locaux, dont nos fameux sushis desserts."
         },
         about: {
-          title: "À Propos",
+          title: "Notre Histoire",
           description: "Tout a commencé à l'école secondaire, avec deux amies d'enfance rêvant qu'un jour, ils ouvriraient leur propre petit restaurant au cœur du village historique de Pointe-Claire."
         },
         announcements: {

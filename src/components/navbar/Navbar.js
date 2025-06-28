@@ -11,11 +11,9 @@ import {
   NavbarList,
   NavContainer,
   AppBarStyled,
-  StyledLink,
-  OrderButton,
-  NavButton,
-  HomeLink
+  StyledLink
 } from "./style"
+import { CustomNavButton, PrimaryNavButton, TextNavButton } from "./style"
 import './navbar.css'
 
 const Navbar = () => {
@@ -38,8 +36,8 @@ const Navbar = () => {
   }
 
   const navLinks = [
-    { title: `About`, path: `/about` },
-    // { title: `Contact`, path: `/contact` },
+    { title: `Our Story`, path: `/about` },
+    { title: `Contact`, path: `/contact` },
     { title: `Order online`, path: `https://avocadosushi-restaurant.order-online.ai/#/`},
     { title: `Reserve online`, path: `https://widgets.libroreserve.com/WEB/QC017111388322/book`},
     { title: `English`, path: `/` },
@@ -52,40 +50,40 @@ const Navbar = () => {
         <Toolbar>
           <NavContainer maxWidth="lg" style={{display:'flex'}}>
             <Brand>
-              <HomeLink to={getLocalizedPath('/')}>
+              <Link to={getLocalizedPath('/')}>
                 <Img fluid={data.brand.childImageSharp.fluid} />
-              </HomeLink>
+              </Link>
             </Brand>
             
             <Hidden smDown>
               <NavbarList component="nav">
                 <StyledLink to={getLocalizedPath('/about')}>
-                  <NavButton>{language === 'fr' ? 'À Propos' : 'About'}</NavButton>
+                  <TextNavButton as="span">
+                    {language === 'fr' ? 'Notre Histoire' : 'Our Story'}
+                  </TextNavButton>
                 </StyledLink>
-                {/* <StyledLink to={getLocalizedPath('/contact')}>
-                  <NavButton>{language === 'fr' ? 'Contact' : 'Contact'}</NavButton>
-                </StyledLink> */}
+                <StyledLink to={getLocalizedPath('/contact')}>
+                  <TextNavButton as="span">
+                    {language === 'fr' ? 'Contact' : 'Contact'}
+                  </TextNavButton>
+                </StyledLink>
                 
                 <div className="buttons">
-                  <a 
+                  <PrimaryNavButton 
                     href={content.navigation?.orderButtonUrl || 'https://avocadosushi-restaurant.order-online.ai/#/'} 
                     target='_blank' 
                     rel="noreferrer"
                   >
-                    <OrderButton variant="contained">
-                      {content.navigation?.orderButtonText || (language === 'fr' ? 'Commander' : 'Order Online')}
-                    </OrderButton>
-                  </a>
+                    {content.navigation?.orderButtonText || (language === 'fr' ? 'Commander' : 'Order Online')}
+                  </PrimaryNavButton>
                   
-                  <a 
+                  <CustomNavButton 
                     href={content.navigation?.reserveButtonUrl || `https://widgets.libroreserve.com/WEB/QC017111388322/book${language === 'fr' ? '?lang=fr' : ''}`} 
                     target='_blank' 
                     rel="noreferrer"
                   >
-                    <OrderButton variant="contained">
-                      {content.navigation?.reserveButtonText || (language === 'fr' ? 'Réserver' : 'Reserve Online')}
-                    </OrderButton>
-                  </a>
+                    {content.navigation?.reserveButtonText || (language === 'fr' ? 'Réserver' : 'Reserve Online')}
+                  </CustomNavButton>
                 </div>
                 
                 <LanguageSwitcher />
