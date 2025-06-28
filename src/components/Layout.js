@@ -9,6 +9,7 @@ import GlobalStyles from '@styles/GlobalStyles.js';
 
 import Navbar from '@components/navbar/Navbar'
 import Footer from '@components/footer/Footer'
+import FirebaseCMS from './cms/FirebaseCMS'
 
 const Layout = ({ children }) => (
     <ThemeProvider theme={theme}>
@@ -17,6 +18,7 @@ const Layout = ({ children }) => (
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FirebaseCMS /> 
       </>
     </ThemeProvider>
 )

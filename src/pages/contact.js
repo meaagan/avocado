@@ -1,62 +1,77 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-
 import { Container } from '@components/global'
-
 import styled from 'styled-components'
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import BackgroundImage from 'gatsby-background-image'
-import Form from './contact/Form'
+import Img from 'gatsby-image';
 import AMap from './contact/AMap'
 import Links from './contact/Links'
+import { useContent } from '../hooks/useContent'
 
-const Contact = () => (
-    <StaticQuery
-      query={graphql`
-        query {
-          background: file(
-            sourceInstanceName: { eq: "images" }
-            name: { eq: "bg" }
-          ) {
-            childImageSharp {
-              fluid(maxWidth: 3000) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              }
+import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+const Contact = () => {
+  const { content, language } = useContent()
+  const data = useStaticQuery(
+    graphql`
+      query {
+        background: file(
+          sourceInstanceName: { eq: "images" }
+          name: { eq: "bg" }
+        ) {
+          childImageSharp {
+            fluid(maxWidth: 3000) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
-
         }
-      `}
-      render={data => (
-        <Layout>
-          <StyledBackground
-            Tag="section"
-            fluid={data.background.childImageSharp.fluid}
-            backgroundColor={`#040e18`}
-          >
-            <SEO title="Contact" />
-            <ContactContainer>
-              <Left>
-                <h1 style={{textAlign:'center'}}>Contact</h1>
-                <Links />
-                {/* <Form /> */}
-              </Left>
-              <AMap />
-            </ContactContainer>
-          </StyledBackground>
-        </Layout>
-      )}
-    />
-)
 
-const StyledBackground = styled(BackgroundImage)`
+      }
+    `)
+
+  return (
+    <Layout>
+      <BackgroundWrapper>
+        <StyledBackground Tag="section"
+        fluid={data.background.childImageSharp.fluid} />
+        <ContentOverlay>
+          <SEO title={language === 'fr' ? 'Contact' : 'Contact'} />
+          <ContactContainer>
+            <Left>
+              <h1 style={{textAlign:'center'}}>
+                {language === 'fr' ? 'Contact' : 'Contact'}
+              </h1>
+              <Links />
+            </Left>
+            <AMap />
+          </ContactContainer>
+        </ContentOverlay>
+      </BackgroundWrapper>
+    </Layout>
+  )
+}
+
+const BackgroundWrapper = styled.section`
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+`
+
+const StyledBackground = styled(Img)`
+  position: absolute !important;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
+`
 
-  background-position: bottom center;
-  background-repeat: repeat-y;
-  background-size: cover;
+const ContentOverlay = styled.div`
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
 `
 
 const Left = styled.div`

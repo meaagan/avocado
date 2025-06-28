@@ -12,7 +12,31 @@ li {
     list-style-type: none;
 }
 
+/* Updated buttons container for better spacing */
 .buttons {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 16px;
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 991px) {
+    .buttons {
+        gap: 4px;
+        margin: 0 8px;
+    }
+}
+
+/* Make sure the navbar list items are properly aligned */
+.MuiList-root {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Smooth transitions for all interactive elements */
+.MuiToolbar-root a,
+.MuiToolbar-root button {
+    transition: all 0.3s ease;
 }
