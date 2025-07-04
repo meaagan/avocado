@@ -3,16 +3,17 @@ import Layout from "@components/Layout"
 import SEO from "@components/seo"
 import About from './homepage/About'
 import Header from './homepage/Header'
-import News from './homepage/News'
+import Contact from './homepage/Contact'
 import Oceanwise from './homepage/Oceanwise'
 import Menu from './homepage/Menu'
 import ImageBreak from './homepage/ImageBreak'
+import News from './homepage/News'
 import { ThemeProvider } from 'styled-components'
 import theme from '@styles/theme'
 import { useContent } from '../hooks/useContent'
 
 const IndexPage = ({ pageContext }) => {
-  const { content, language } = useContent()
+  const { content, language } = useContent('homepage')
   
   return (
    <Layout>
@@ -35,6 +36,9 @@ const IndexPage = ({ pageContext }) => {
       </section>
       <section id="menu">
         <Menu />
+      </section>
+      <section id="contact">
+        <Contact />
       </section>
       </ThemeProvider>
     </Layout>

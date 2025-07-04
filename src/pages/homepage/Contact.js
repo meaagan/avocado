@@ -1,10 +1,8 @@
-import React from "react"
+import React from 'react'
 import { Container } from '@components/global'
 import styled from 'styled-components'
-import Layout from "../components/Layout"
-import SEO from "../components/seo"
-import AMap from './contact/AMap'
-import { useContent } from '../hooks/useContent'
+import AMap from '../contact/AMap'
+import { useContent } from '../../hooks/useContent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faMapMarkerAlt, 
@@ -16,49 +14,21 @@ import {
   faCalendarAlt
 } from '@fortawesome/free-solid-svg-icons'
 
-const ContactPage = () => {
-  const { content, loading, getContent } = useContent('contact')
-
-  if (loading) {
-    return (
-      <Layout>
-        <LoadingContainer>
-          <LoadingText>Loading...</LoadingText>
-        </LoadingContainer>
-      </Layout>
-    )
-  }
+const Contact = () => {
+  const { content, getContent, language } = useContent('homepage')
 
   return (
-    <Layout>
-      <SEO 
-        title={getContent('seo.metaTitle', 'Contact - Avocado Sushi du Village')} 
-        description={getContent('seo.metaDescription', 'Contact Avocado Sushi du Village')}
-      />
-      
-      {/* Hero Section */}
-      <HeroSection>
-        <Container>
-          <HeroContent>
-            <h1>{getContent('hero.title', 'Contact Us')}</h1>
-            {getContent('hero.subtitle') && (
-              <Subtitle>{getContent('hero.subtitle')}</Subtitle>
-            )}
-          </HeroContent>
-        </Container>
-      </HeroSection>
-
-      {/* Contact Information Section */}
-      <ContactInfoSection>
-        <Container>
-          <ContactGrid>
-            {/* Contact Details */}
-            <ContactDetails>
+    <ContactSection id="contact">
+      <Container>
+        <ContactGrid>
+          {/* Contact Information */}
+          <ContactInfo>
+            <ContactCards>
               <ContactCard>
                 <CardIcon>
                   <FontAwesomeIcon icon={faMapMarkerAlt} />
                 </CardIcon>
-                <CardTitle>Location</CardTitle>
+                <CardTitle>{language === 'fr' ? 'Emplacement' : 'Location'}</CardTitle>
                 <CardContent>
                   <BusinessName>{getContent('contact.businessName', 'Avocado Sushi du Village')}</BusinessName>
                   <Address>{getContent('contact.address', '270 ch. Bord-du-Lac - Lakeshore\nPointe-Claire, QC, H9S 4K9')}</Address>
@@ -69,7 +39,7 @@ const ContactPage = () => {
                 <CardIcon>
                   <FontAwesomeIcon icon={faPhone} />
                 </CardIcon>
-                <CardTitle>Phone & Email</CardTitle>
+                <CardTitle>{language === 'fr' ? 'Contact' : 'Contact'}</CardTitle>
                 <CardContent>
                   <ContactLink href={`tel:${getContent('contact.phone', '514.505.4055').replace(/[.\s-]/g, '')}`}>
                     <FontAwesomeIcon icon={faPhone} style={{ marginRight: '8px', fontSize: '0.9rem' }} />
@@ -86,14 +56,11 @@ const ContactPage = () => {
                 <CardIcon>
                   <FontAwesomeIcon icon={faClock} />
                 </CardIcon>
-                <CardTitle>Hours</CardTitle>
+                <CardTitle>{language === 'fr' ? 'Heures' : 'Hours'}</CardTitle>
                 <CardContent>
-                  <Hours>{getContent('hours.hours', 'Tuesday - Sunday: 4:00 PM - 9:00 PM\nMonday: Closed')}</Hours>
-                  {getContent('hours.reservationNote') && (
-                    <Note>{getContent('hours.reservationNote')}</Note>
-                  )}
-                  {getContent('hours.specialInstructions') && (
-                    <Note>{getContent('hours.specialInstructions')}</Note>
+                  <Hours>{getContent('contact.hours', language === 'fr' ? 'Mardi - Dimanche: 16h00 - 21h00\nLundi: Fermé' : 'Tuesday - Sunday: 4:00 PM - 9:00 PM\nMonday: Closed')}</Hours>
+                  {getContent('contact.reservationNote') && (
+                    <Note>{getContent('contact.reservationNote')}</Note>
                   )}
                 </CardContent>
               </ContactCard>
@@ -102,7 +69,7 @@ const ContactPage = () => {
                 <CardIcon>
                   <FontAwesomeIcon icon={faUsers} />
                 </CardIcon>
-                <CardTitle>Follow Us</CardTitle>
+                <CardTitle>{language === 'fr' ? 'Suivez-nous' : 'Follow Us'}</CardTitle>
                 <CardContent>
                   <SocialLinks>
                     <SocialLink 
@@ -122,100 +89,82 @@ const ContactPage = () => {
                   </SocialLinks>
                 </CardContent>
               </ContactCard>
-            </ContactDetails>
+            </ContactCards>
 
-            {/* Map */}
-            <MapWrapper>
-              <MapContainer>
-                <AMap />
-              </MapContainer>
-            </MapWrapper>
-          </ContactGrid>
-        </Container>
-      </ContactInfoSection>
-
-      {/* Action Section */}
-      <ActionSection>
-        <Container>
-          <ActionContent>
-            <ActionTitle>Ready to Order or Make a Reservation?</ActionTitle>
+            {/* Action Buttons */}
             <ActionButtons>
               <ActionButton 
-                href="https://avocadosushi-restaurant.order-online.ai/#/" 
+                href={getContent('navigation.orderButtonUrl', 'https://avocadosushi-restaurant.order-online.ai/#/')} 
                 target="_blank" 
                 rel="noreferrer"
                 primary
               >
                 <FontAwesomeIcon icon={faUtensils} style={{ marginRight: '8px' }} />
-                Order Online
+                {getContent('navigation.orderButtonText', language === 'fr' ? 'Commander' : 'Order Online')}
               </ActionButton>
               <ActionButton 
-                href="https://widgets.libroreserve.com/WEB/QC017111388322/book" 
+                href={getContent('navigation.reserveButtonUrl', 'https://widgets.libroreserve.com/WEB/QC017111388322/book')} 
                 target="_blank" 
                 rel="noreferrer"
               >
                 <FontAwesomeIcon icon={faCalendarAlt} style={{ marginRight: '8px' }} />
-                Make Reservation
+                {getContent('navigation.reserveButtonText', language === 'fr' ? 'Réserver' : 'Reserve Online')}
               </ActionButton>
             </ActionButtons>
-          </ActionContent>
-        </Container>
-      </ActionSection>
-    </Layout>
+          </ContactInfo>
+
+          {/* Map */}
+          <MapWrapper>
+            <MapContainer>
+              <AMap />
+            </MapContainer>
+          </MapWrapper>
+        </ContactGrid>
+      </Container>
+    </ContactSection>
   )
 }
 
 // Styled Components
-const LoadingContainer = styled(Container)`
-  margin-top: 5%;
-  padding-top: 100px;
-  text-align: center;
-`
-
-const LoadingText = styled.div`
-  font-size: 1.2rem;
-  color: ${props => props.theme.color.white.regular};
-`
-
-const HeroSection = styled.section`
-  padding: 120px 0 80px 0;
-  background-color: ${props => props.theme.color.primary};
+const ContactSection = styled.section`
+  padding: 80px 0;
+  background-color: #1e293b;
   
-  @media (max-width: ${props => props.theme.screen.md}) {
-    padding: 140px 0 60px 0;
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    padding: 40px 0;
   }
 `
 
-const HeroContent = styled.div`
+const SectionHeader = styled.div`
   text-align: center;
+  margin-bottom: 60px;
   
-  h1 {
+  h2 {
     color: ${props => props.theme.color.white.regular};
+    ${props => props.theme.font_size.larger};
+    ${props => props.theme.font_weight.regular};
     margin-bottom: 1rem;
-    ${props => props.theme.font_size.xlarge};
   }
   
   @media (max-width: ${props => props.theme.screen.sm}) {
-    h1 {
-      ${props => props.theme.font_size.larger};
+    margin-bottom: 30px;
+    
+    h2 {
+      ${props => props.theme.font_size.large};
+      margin-bottom: 0.5rem;
     }
   }
 `
 
-const Subtitle = styled.h2`
+const Subtitle = styled.p`
   color: ${props => props.theme.color.white.dark};
+  ${props => props.theme.font_size.regular};
   ${props => props.theme.font_weight.light};
-  ${props => props.theme.font_size.large};
   margin: 0;
   
   @media (max-width: ${props => props.theme.screen.sm}) {
-    ${props => props.theme.font_size.regular};
+    ${props => props.theme.font_size.small};
   }
-`
-
-const ContactInfoSection = styled.section`
-  padding: 80px 0;
-  background-color: ${props => props.theme.color.secondary};
 `
 
 const ContactGrid = styled.div`
@@ -226,21 +175,40 @@ const ContactGrid = styled.div`
   
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
+  }
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    gap: 20px;
   }
 `
 
-const ContactDetails = styled.div`
+const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    gap: 20px;
+  }
+`
+
+const ContactCards = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 `
 
 const ContactCard = styled.div`
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  padding: 30px;
+  padding: 25px;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   
@@ -249,54 +217,92 @@ const ContactCard = styled.div`
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-5px);
   }
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    padding: 15px;
+    border-radius: 10px;
+    
+    &:hover {
+      transform: none;
+    }
+  }
 `
 
 const CardIcon = styled.div`
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
   color: ${props => props.theme.color.white.regular};
   display: flex;
   align-items: center;
   justify-content: flex-start;
   
   svg {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
   }
 `
 
 const CardTitle = styled.h3`
   color: ${props => props.theme.color.white.regular};
-  ${props => props.theme.font_size.large};
+  ${props => props.theme.font_size.regular};
   ${props => props.theme.font_weight.regular};
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 10px;
+  padding-bottom: 8px;
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    ${props => props.theme.font_size.small};
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
 `
 
 const CardContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    gap: 8px;
+  }
 `
 
 const BusinessName = styled.div`
   color: ${props => props.theme.color.white.regular};
   ${props => props.theme.font_weight.regular};
-  ${props => props.theme.font_size.regular};
+  ${props => props.theme.font_size.small};
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    ${props => props.theme.font_size.xsmall};
+  }
 `
 
 const Address = styled.div`
   color: ${props => props.theme.color.white.dark};
-  ${props => props.theme.font_size.small};
+  ${props => props.theme.font_size.xsmall};
   line-height: 1.6;
   white-space: pre-line;
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    line-height: 1.4;
+    font-size: 11px;
+  }
 `
 
 const ContactLink = styled.a`
   color: ${props => props.theme.color.white.dark};
   text-decoration: none;
-  ${props => props.theme.font_size.small};
+  ${props => props.theme.font_size.xsmall};
   transition: color 0.3s ease;
   display: flex;
   align-items: center;
@@ -313,34 +319,51 @@ const ContactLink = styled.a`
     color: ${props => props.theme.color.white.darker};
     transition: color 0.3s ease;
   }
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    font-size: 11px;
+  }
 `
 
 const Hours = styled.div`
   color: ${props => props.theme.color.white.dark};
-  ${props => props.theme.font_size.small};
-  line-height: 1.8;
+  ${props => props.theme.font_size.xsmall};
+  line-height: 1.6;
   white-space: pre-line;
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    line-height: 1.4;
+    font-size: 11px;
+  }
 `
 
 const Note = styled.div`
   color: ${props => props.theme.color.white.darker};
   ${props => props.theme.font_size.xsmall};
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.4;
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    font-size: 10px;
+  }
 `
 
 const SocialLinks = styled.div`
   display: flex;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    gap: 8px;
+  }
 `
 
 const SocialLink = styled.a`
   color: ${props => props.theme.color.white.dark};
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
+  border-radius: 15px;
   ${props => props.theme.font_size.xsmall};
   transition: all 0.3s ease;
   
@@ -349,77 +372,35 @@ const SocialLink = styled.a`
     color: ${props => props.theme.color.white.regular};
     border-color: rgba(255, 255, 255, 0.4);
   }
-`
-
-const MapWrapper = styled.div`
-  position: sticky;
-  top: 100px;
-  
-  @media (max-width: ${props => props.theme.screen.md}) {
-    position: relative;
-    top: 0;
-  }
-`
-
-const MapContainer = styled.div`
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  
-  .mapboxgl-map {
-    height: 400px !important;
-    
-    @media (max-width: ${props => props.theme.screen.sm}) {
-      height: 300px !important;
-    }
-  }
-`
-
-const ActionSection = styled.section`
-  padding: 80px 0;
-  background-color: ${props => props.theme.color.primary};
-`
-
-const ActionContent = styled.div`
-  text-align: center;
-`
-
-const ActionTitle = styled.h2`
-  color: ${props => props.theme.color.white.regular};
-  ${props => props.theme.font_size.larger};
-  ${props => props.theme.font_weight.regular};
-  margin-bottom: 40px;
   
   @media (max-width: ${props => props.theme.screen.sm}) {
-    ${props => props.theme.font_size.large};
-    margin-bottom: 30px;
+    padding: 4px 8px;
+    font-size: 10px;
+    border-radius: 10px;
   }
 `
 
 const ActionButtons = styled.div`
   display: flex;
   gap: 20px;
-  justify-content: center;
   
   @media (max-width: ${props => props.theme.screen.sm}) {
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    gap: 12px;
   }
 `
 
 const ActionButton = styled.a`
+  flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 32px;
+  padding: 14px 24px;
   text-decoration: none;
   border-radius: 25px;
   ${props => props.theme.font_weight.regular};
   ${props => props.theme.font_size.small};
   transition: all 0.3s ease;
-  min-width: 180px;
   text-align: center;
   
   svg {
@@ -459,9 +440,43 @@ const ActionButton = styled.a`
   `}
   
   @media (max-width: ${props => props.theme.screen.sm}) {
-    padding: 14px 28px;
-    min-width: 200px;
+    padding: 12px 20px;
+    ${props => props.theme.font_size.xsmall};
+    border-radius: 20px;
+    
+    &:hover {
+      transform: none;
+      box-shadow: none;
+      
+      svg {
+        transform: none;
+      }
+    }
   }
 `
 
-export default ContactPage
+const MapWrapper = styled.div`
+  /* Removed sticky positioning */
+`
+
+const MapContainer = styled.div`
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  .mapboxgl-map {
+    height: 400px !important;
+    
+    @media (max-width: ${props => props.theme.screen.sm}) {
+      height: 250px !important;
+    }
+  }
+  
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+`
+
+export default Contact

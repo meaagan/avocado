@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
-import { useContent } from '../../hooks/useContent' 
+import { useMultiPageContent } from '../../hooks/useContent'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
-    const { language } = useContent() 
+    const { language, getContent } = useMultiPageContent()
     
     const data = useStaticQuery(
         graphql`
@@ -39,49 +39,51 @@ const Footer = () => {
                         <FooterLink to={getLocalizedPath('/about')}>
                             {language === 'fr' ? 'Notre Histoire' : 'Our Story'}
                         </FooterLink>
-                        <FooterLink to={getLocalizedPath('/contact')}>
-                            Contact
-                        </FooterLink>
                         <FooterLink 
                             as="a" 
-                            href="https://avocadosushi-restaurant.order-online.ai/#/" 
+                            href={getContent('homepage', 'navigation', 'orderButtonUrl', 'https://avocadosushi-restaurant.order-online.ai/#/')} 
                             target="_blank" 
                             rel="noreferrer"
                         >
-                            {language === 'fr' ? 'Commander en ligne' : 'Order Online'}
+                            {getContent('homepage', 'navigation', 'orderButtonText', language === 'fr' ? 'Commander en ligne' : 'Order Online')}
                         </FooterLink>
                         <FooterLink 
                             as="a" 
-                            href={`https://widgets.libroreserve.com/WEB/QC017111388322/book${language === 'fr' ? '?lang=fr' : ''}`} 
+                            href={getContent('homepage', 'navigation', 'reserveButtonUrl', `https://widgets.libroreserve.com/WEB/QC017111388322/book${language === 'fr' ? '?lang=fr' : ''}`)} 
                             target="_blank" 
                             rel="noreferrer"
                         >
-                            {language === 'fr' ? 'Réserver en ligne' : 'Reserve Online'}
+                            {getContent('homepage', 'navigation', 'reserveButtonText', language === 'fr' ? 'Réserver en ligne' : 'Reserve Online')}
                         </FooterLink>
                     </NavLinks>
                 </NavigationSection>
 
-                {/* Social Media Section */}
+                {/* Social Media Section - CMS Controlled */}
                 <SocialSection>
                     <h4>{language === 'fr' ? 'Suivez-nous' : 'Follow Us'}</h4>
                     <SocialLinks>
-                        <a href="https://www.facebook.com/avocado.sushi.du.village/">
+                        <a href={getContent('footer', 'links', 'socialFacebook', 'https://www.facebook.com/avocado.sushi.du.village/')}>
                             <FontAwesomeIcon icon={faFacebookSquare} />
                         </a>
-                        <a href="https://www.instagram.com/avocadosushiduvillage/">
+                        <a href={getContent('footer', 'links', 'socialInstagram', 'https://www.instagram.com/avocadosushiduvillage/')}>
                             <FontAwesomeIcon icon={faInstagram} />
                         </a>
                     </SocialLinks>
                 </SocialSection>
 
-                {/* Location Section */}
+                {/* Location Section - CMS Controlled from Contact Page */}
                 <LocationSection>
                     <Location>
-                        <strong>Avocado Sushi du Village</strong><br />
-                        270 ch. Bord-du-Lac - Lakeshore <br />
-                        Pointe-Claire, QC, H9S 4K9<br />
-                        <a href="tel:514-505-4055">514.505.4055</a><br />
-                        <a href="mailto:info@avocadosushi.ca">info@avocadosushi.ca</a>
+                        <strong>{getContent('contact', 'contact', 'businessName', 'Avocado Sushi du Village')}</strong><br />
+                        <span style={{ whiteSpace: 'pre-line' }}>
+                            {getContent('contact', 'contact', 'address', '270 ch. Bord-du-Lac - Lakeshore\nPointe-Claire, QC, H9S 4K9')}
+                        </span><br />
+                        <a href={`tel:${getContent('contact', 'contact', 'phone', '514-505-4055').replace(/[.\s-]/g, '')}`}>
+                            {getContent('contact', 'contact', 'phone', '514.505.4055')}
+                        </a><br />
+                        <a href={`mailto:${getContent('contact', 'contact', 'email', 'info@avocadosushi.ca')}`}>
+                            {getContent('contact', 'contact', 'email', 'info@avocadosushi.ca')}
+                        </a>
                     </Location>
                 </LocationSection>
 
@@ -91,9 +93,13 @@ const Footer = () => {
                 </LogoSection>
             </FooterContent>
             
-            {/* Copyright */}
+            {/* Copyright - CMS Controlled */}
             <Copyright>
-                © {new Date().getFullYear()} Avocado Sushi du Village. {language === 'fr' ? 'Tous droits réservés.' : 'All rights reserved.'}
+                © {new Date().getFullYear()} {getContent('contact', 'contact', 'businessName', 'Avocado Sushi du Village')}. {' '}
+                {getContent('footer', 'text', 'copyright', language === 'fr' ? 'Tous droits réservés.' : 'All rights reserved.')}
+                {getContent('footer', 'text', 'additionalInfo') && (
+                    <span> {getContent('footer', 'text', 'additionalInfo')}</span>
+                )}
             </Copyright>
         </FooterContainer>
     )
