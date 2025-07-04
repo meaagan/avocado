@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
-import { useContent } from '../../hooks/useContent' // Adjust path as needed
+import { useContent } from '../../hooks/useContent' 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Footer = () => {
-    const { language } = useContent() // Get current language
+    const { language } = useContent() 
     
     const data = useStaticQuery(
         graphql`

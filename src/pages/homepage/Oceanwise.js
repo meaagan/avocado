@@ -44,7 +44,6 @@ const Oceanwise = () => {
   )
 }
 
-// Keep your existing styled components
 const Image = styled.figure`
   @media (max-width:991px) {
     width:30%;

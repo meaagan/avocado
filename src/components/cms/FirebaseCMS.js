@@ -1,4 +1,3 @@
-// src/components/cms/FirebaseCMS.js
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
@@ -14,7 +13,6 @@ const FirebaseCMS = () => {
   const { register, handleSubmit, reset, formState: { isDirty } } = useForm()
 
   useEffect(() => {
-    // Check for secret admin parameter
     const urlParams = new URLSearchParams(window.location.search)
     const isAdminUrl = urlParams.get('admin') === 'avocado2024'
     
@@ -37,10 +35,8 @@ const FirebaseCMS = () => {
       
       if (docSnap.exists()) {
         const data = docSnap.data()
-        // Load the current editing language content into form
         reset(data[editingLanguage] || getDefaultContent(editingLanguage))
       } else {
-        // Set default content for current editing language
         reset(getDefaultContent(editingLanguage))
       }
     } catch (error) {
@@ -128,7 +124,6 @@ const FirebaseCMS = () => {
   const switchLanguage = async (newLang) => {
     setEditingLanguage(newLang)
     
-    // Load content for the new language
     try {
       const docRef = doc(db, 'content', 'homepage')
       const docSnap = await getDoc(docRef)
@@ -147,7 +142,6 @@ const FirebaseCMS = () => {
   const onSubmit = async (data) => {
     setLoading(true)
     try {
-      // Get existing content
       const docRef = doc(db, 'content', 'homepage')
       const docSnap = await getDoc(docRef)
       
@@ -156,7 +150,6 @@ const FirebaseCMS = () => {
         existingData = docSnap.data()
       }
 
-      // Update only the current language
       const updatedData = {
         ...existingData,
         [editingLanguage]: data
@@ -329,8 +322,6 @@ const FirebaseCMS = () => {
   )
 }
 
-// Styled Components - Add these new ones to your existing ones:
-
 const LanguageSection = styled.div`
   margin-bottom: 25px;
   border: 2px solid #4a7c59;
@@ -385,7 +376,6 @@ const LogoutButton = styled.button`
   }
 `
 
-// Keep all your existing styled components (AdminToggle, AdminPanel, etc.)
 const AdminToggle = styled.button`
   position: fixed;
   top: 20px;

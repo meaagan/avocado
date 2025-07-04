@@ -24,7 +24,6 @@ const About = () => {
   )
 }
 
-// Keep your existing styled components
 const AboutText = styled.div`
   text-align: center;
   width: 75%;

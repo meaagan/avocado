@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-// Custom button component that matches your website's style
 export const CustomNavButton = styled.a`
   display: inline-block;
   padding: 12px 24px;
@@ -40,7 +39,6 @@ export const CustomNavButton = styled.a`
   }
 `
 
-// Alternative solid version for primary actions
 export const PrimaryNavButton = styled.a`
   display: inline-block;
   padding: 12px 24px;
@@ -78,7 +76,6 @@ export const PrimaryNavButton = styled.a`
   }
 `
 
-// Simple text button for regular navigation items
 export const TextNavButton = styled.a`
   display: inline-block;
   padding: 12px 16px;

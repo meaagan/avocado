@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { Link as GatsbyLink } from "gatsby"; // Make sure to import from gatsby
+import { Link as GatsbyLink } from "gatsby"; 
 import {
   AppBar,
   Container,
   List,
   Button,
-  // Remove Link import from Material-UI
 } from '@mui/material';
 
 export const NavbarList = styled(List)`
@@ -37,13 +36,11 @@ export const Brand = styled.figure`
   width: 130px;
 `;
 
-// Fix HomeLink to use Gatsby Link instead of Material-UI Link
 export const HomeLink = styled(GatsbyLink)`
   text-decoration: none;
   display: block;
 `
 
-// Keep old buttons for backward compatibility if needed
 export const OrderButton = styled(Button)`
   font-family: 'inherit';
   color: rgba(255, 255, 255, 0.87);
@@ -65,7 +62,6 @@ export const NavButton = styled(Button)`
   }
 `;
 
-// Add the new custom button components
 export const CustomNavButton = styled.a`
   display: inline-block;
   padding: 12px 24px;

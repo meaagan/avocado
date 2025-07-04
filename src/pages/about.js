@@ -5,7 +5,7 @@ import Triptych from "../components/Triptych"
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import { Container } from '@components/global'
-import { useContent } from '../hooks/useContent'  // Updated import
+import { useContent } from '../hooks/useContent'
 
 const SecondPage = () => {
   const { content, language } = useContent()

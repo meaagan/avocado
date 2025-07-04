@@ -9,7 +9,6 @@ const LanguageSwitcher = () => {
   const getCurrentPath = () => {
     if (typeof window === 'undefined') return '/'
     const path = window.location.pathname
-    // Remove /fr prefix to get the base path
     return path.startsWith('/fr') ? path.replace('/fr', '') || '/' : path
   }
 

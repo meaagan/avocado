@@ -1,4 +1,3 @@
-// src/pages/index.js
 import React from "react"
 import Layout from "@components/Layout"
 import SEO from "@components/seo"
@@ -22,9 +21,9 @@ const IndexPage = ({ pageContext }) => {
       <section id="home">
         <Header />
       </section>
-      {/* <section id="news">
+      <section id="news">
         <News />
-      </section> */}
+      </section>
       <section id="about">
         <About />
       </section>

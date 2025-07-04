@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container } from '@components/global'
-// import Posts from './components/Posts'
 import styled from 'styled-components';
 
 const Instagram = () => {

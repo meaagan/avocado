@@ -47,7 +47,6 @@ const Links = () => {
   )
 }
 
-// Keep your existing styled components
 const LinkContainer = styled.div`
   display: flex;
   justify-content: space-around;
