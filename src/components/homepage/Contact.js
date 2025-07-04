@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from '@components/global'
 import styled from 'styled-components'
-import AMap from '../contact/AMap'
+import AMap from '../../pages/contact/AMap'
 import { useContent } from '../../hooks/useContent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 

@@ -1,13 +1,13 @@
 import React from "react"
 import Layout from "@components/Layout"
 import SEO from "@components/seo"
-import About from './homepage/About'
-import Header from './homepage/Header'
-import Contact from './homepage/Contact'
-import Oceanwise from './homepage/Oceanwise'
-import Menu from './homepage/Menu'
-import ImageBreak from './homepage/ImageBreak'
-import News from './homepage/News'
+import About from '../components/homepage/About'
+import Header from '../components/homepage/Header'
+import Contact from '../components/homepage/Contact'
+import Oceanwise from '../components/homepage/Oceanwise'
+import Menu from '../components/homepage/Menu'
+import ImageBreak from '../components/homepage/ImageBreak'
+import News from '../components/homepage/News'
 import { ThemeProvider } from 'styled-components'
 import theme from '@styles/theme'
 import { useContent } from '../hooks/useContent'
