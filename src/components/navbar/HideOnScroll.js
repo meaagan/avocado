@@ -1,4 +1,3 @@
-// src/components/navbar/HideOnScroll.js
 import React, { useState, useEffect } from "react"
 import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';

@@ -1,3 +1,4 @@
+// src/components/cms/FirebaseCMS.js
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
@@ -21,7 +22,8 @@ import {
   faSearch,
   faCopyright,
   faSave,
-  faSpinner
+  faSpinner,
+  faUtensils
 } from '@fortawesome/free-solid-svg-icons'
 
 const FirebaseCMS = () => {
@@ -43,6 +45,10 @@ const FirebaseCMS = () => {
         navigation: { 
           title: 'Navigation Buttons', 
           fields: ['orderButtonText', 'orderButtonUrl', 'reserveButtonText', 'reserveButtonUrl'] 
+        },
+        menu: {
+          title: 'Menu Section',
+          fields: ['title', 'description', 'menuUrl', 'linkText']
         },
         oceanwise: { title: 'Ocean Wise Section', fields: ['title', 'description'] },
         contact: { 
@@ -134,6 +140,12 @@ const FirebaseCMS = () => {
             reserveButtonText: "Reserve Online",
             reserveButtonUrl: "https://widgets.libroreserve.com/WEB/QC017111388322/book"
           },
+          menu: {
+            title: "Menu",
+            description: "Discover our delicious selection of traditional sushi and creative fusion dishes.",
+            menuUrl: "",
+            linkText: "Click here to see the full menu"
+          },
           oceanwise: {
             title: "Certification Oceanwise",
             description: "Ocean Wise is a conservation program created to educate consumers and businesses on issues related to fisheries and aquaculture practices..."
@@ -163,6 +175,12 @@ const FirebaseCMS = () => {
             orderButtonUrl: "https://avocadosushi-restaurant.order-online.ai/#/",
             reserveButtonText: "Réserver",
             reserveButtonUrl: "https://widgets.libroreserve.com/WEB/QC017111388322/book?lang=fr"
+          },
+          menu: {
+            title: "Menu",
+            description: "Découvrez notre délicieuse sélection de sushis traditionnels et de plats fusion créatifs.",
+            menuUrl: "",
+            linkText: "Cliquez ici pour voir le menu complet"
           },
           oceanwise: {
             title: "Certification Oceanwise",
@@ -344,6 +362,7 @@ const FirebaseCMS = () => {
       hero: faHome,
       announcements: faBullhorn,
       navigation: faLink,
+      menu: faUtensils,
       oceanwise: faFish,
       contact: faEnvelope,
       story: faUser,
@@ -714,6 +733,7 @@ const CurrentEditingInfo = styled.div`
   border-left: 4px solid #ff6b35;
   font-weight: 500;
   text-align: center;
+  color: #ff6b35;
 `
 
 const Section = styled.div`

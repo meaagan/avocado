@@ -7,6 +7,7 @@ import Contact from './homepage/Contact'
 import Oceanwise from './homepage/Oceanwise'
 import Menu from './homepage/Menu'
 import ImageBreak from './homepage/ImageBreak'
+import News from './homepage/News'
 import { ThemeProvider } from 'styled-components'
 import theme from '@styles/theme'
 import { useContent } from '../hooks/useContent'
@@ -21,9 +22,9 @@ const IndexPage = ({ pageContext }) => {
       <section id="home">
         <Header />
       </section>
-      {/* <section id="news">
+      <section id="news">
         <News />
-      </section> */}
+      </section>
       <section id="about">
         <About />
       </section>
