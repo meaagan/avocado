@@ -1,4 +1,4 @@
-import React from "react"
+// React import removed - not needed with React 17+
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"

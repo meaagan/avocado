@@ -1,6 +1,6 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
+import { initializeApp } from "firebase/app"
+import { getAuth } from "firebase/auth"
+import { getFirestore } from "firebase/firestore"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -13,9 +13,9 @@ const firebaseConfig = {
   storageBucket: "avocado-sushi-cms.firebasestorage.app",
   messagingSenderId: "771086941039",
   appId: "1:771086941039:web:b145c476f000a7485b469a",
-  measurementId: "G-GH51LLJ7Q6"
-};
+  measurementId: "G-GH51LLJ7Q6",
+}
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
 export const db = getFirestore(app)
 export const auth = getAuth(app)

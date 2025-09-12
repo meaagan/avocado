@@ -1,15 +1,17 @@
-import React from "react"
+import { StaticQuery, graphql } from "gatsby"
+// React import removed - not needed with React 17+
+import styled from "styled-components"
+
+import { Container } from "@components/global"
+
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import Triptych from "../components/Triptych"
-import { StaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
-import { Container } from '@components/global'
-import { useContent } from '../hooks/useContent'
+import { useContent } from "../hooks/useContent"
 
 const AboutPage = () => {
-  const { content, loading, getContent } = useContent('about')
-  
+  const { content, loading, getContent } = useContent("about")
+
   if (loading) {
     return (
       <Layout>
@@ -35,9 +37,9 @@ const AboutPage = () => {
             }
           }
           img2: file(
-              sourceInstanceName: { eq: "images" }
-              name: { eq: "about_1" }
-            ) {
+            sourceInstanceName: { eq: "images" }
+            name: { eq: "about_1" }
+          ) {
             childImageSharp {
               fluid(maxWidth: 800, maxHeight: 800) {
                 ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -116,66 +118,83 @@ const AboutPage = () => {
           }
         }
       `}
-      
       render={data => (
         <Layout>
-          <SEO 
-            title={getContent('seo.metaTitle', 'Our Story - Avocado Sushi du Village')} 
-            description={getContent('seo.metaDescription', 'Learn about the story behind Avocado Sushi du Village')}
+          <SEO
+            title={getContent(
+              "seo.metaTitle",
+              "Our Story - Avocado Sushi du Village",
+            )}
+            description={getContent(
+              "seo.metaDescription",
+              "Learn about the story behind Avocado Sushi du Village",
+            )}
           />
           <StyledContainer>
             {/* Hero Section - Fully CMS Controlled */}
             <HeroSection>
-              <h1>{getContent('hero.title', 'Our Story')}</h1>
-              {getContent('hero.subtitle') && (
-                <Subtitle>{getContent('hero.subtitle')}</Subtitle>
+              <h1>{getContent("hero.title", "Our Story")}</h1>
+              {getContent("hero.subtitle") && (
+                <Subtitle>{getContent("hero.subtitle")}</Subtitle>
               )}
             </HeroSection>
-            
+
             {/* Story Introduction - CMS Controlled */}
             <StorySection>
               <AboutText>
-                {getContent('story.intro', 'It all began in high school, with two childhood friends dreaming that one day, they would open their own cozy restaurant in the heart of historic Pointe Claire Village.')}
+                {getContent(
+                  "story.intro",
+                  "It all began in high school, with two childhood friends dreaming that one day, they would open their own cozy restaurant in the heart of historic Pointe Claire Village.",
+                )}
               </AboutText>
             </StorySection>
-            
-            <Triptych 
-              img1={data.img1.childImageSharp.fluid} 
-              img2={data.img2.childImageSharp.fluid} 
-              img3={data.img9.childImageSharp.fluid} 
+
+            <Triptych
+              img1={data.img1.childImageSharp.fluid}
+              img2={data.img2.childImageSharp.fluid}
+              img3={data.img9.childImageSharp.fluid}
             />
-            
+
             {/* Dominique's Story - CMS Controlled */}
             <StorySection>
               <AboutText>
-                {getContent('story.dominique_story', 'Dominique grew up in Pointe Claire and dreamed of opening her own bistro since the age of 12...')}
+                {getContent(
+                  "story.dominique_story",
+                  "Dominique grew up in Pointe Claire and dreamed of opening her own bistro since the age of 12...",
+                )}
               </AboutText>
             </StorySection>
-            
-            <Triptych 
-              img1={data.img6.childImageSharp.fluid} 
-              img2={data.img7.childImageSharp.fluid} 
-              img3={data.img8.childImageSharp.fluid} 
+
+            <Triptych
+              img1={data.img6.childImageSharp.fluid}
+              img2={data.img7.childImageSharp.fluid}
+              img3={data.img8.childImageSharp.fluid}
             />
-            
+
             {/* Location Story - CMS Controlled */}
             <StorySection>
               <AboutText>
-                {getContent('story.location_story', 'There were many vacant spaces, but we knew we had found the perfect location...')}
+                {getContent(
+                  "story.location_story",
+                  "There were many vacant spaces, but we knew we had found the perfect location...",
+                )}
               </AboutText>
             </StorySection>
-            
+
             {/* Conclusion - CMS Controlled */}
             <StorySection>
               <AboutText>
-                {getContent('story.conclusion', 'Almost a decade later, Avocado continues to be the place to be for local businesspeople, families and even out of towners who have a craving for all things sushi.')}
+                {getContent(
+                  "story.conclusion",
+                  "Almost a decade later, Avocado continues to be the place to be for local businesspeople, families and even out of towners who have a craving for all things sushi.",
+                )}
               </AboutText>
             </StorySection>
-            
-            <Triptych 
-              img1={data.img3.childImageSharp.fluid} 
-              img2={data.img4.childImageSharp.fluid} 
-              img3={data.img5.childImageSharp.fluid} 
+
+            <Triptych
+              img1={data.img3.childImageSharp.fluid}
+              img2={data.img4.childImageSharp.fluid}
+              img3={data.img5.childImageSharp.fluid}
             />
           </StyledContainer>
         </Layout>
@@ -198,7 +217,7 @@ const LoadingText = styled.div`
 const StyledContainer = styled(Container)`
   margin-top: 5%;
   padding-top: 100px;
-  
+
   @media (max-width: ${props => props.theme.screen.md}) {
     padding-top: 120px;
   }
@@ -207,7 +226,7 @@ const StyledContainer = styled(Container)`
 const HeroSection = styled.div`
   text-align: center;
   margin-bottom: 3rem;
-  
+
   h1 {
     color: ${props => props.theme.color.white.regular};
     margin-bottom: 1rem;
@@ -231,7 +250,7 @@ const AboutText = styled.p`
   color: ${props => props.theme.color.white.dark};
   text-align: justify;
   white-space: pre-line; /* This allows line breaks from CMS content */
-  
+
   @media (max-width: ${props => props.theme.screen.sm}) {
     text-align: left;
   }

@@ -1,28 +1,36 @@
 // src/components/cms/AdminAuth.js
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
-import { auth } from '../../lib/firebase'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faLock, faSignInAlt, faSpinner, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import {
+  faUser,
+  faLock,
+  faSignInAlt,
+  faSpinner,
+  faEye,
+  faEyeSlash,
+} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { signInWithEmailAndPassword, signOut } from "firebase/auth"
+import { useState } from "react"
+import styled from "styled-components"
 
-const AdminAuth = ({ user, onAuthChange }) => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+import { auth } from "../../lib/firebase"
+
+const AdminAuth = ({ user, onAuthChange: _onAuthChange }) => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
+  const [error, setError] = useState("")
   const [showPassword, setShowPassword] = useState(false)
 
-  const handleLogin = async (e) => {
+  const handleLogin = async e => {
     e.preventDefault()
     setLoading(true)
-    setError('')
+    setError("")
 
     try {
       await signInWithEmailAndPassword(auth, email, password)
-      showNotification('Successfully logged in as admin!')
+      showNotification("Successfully logged in as admin!")
     } catch (error) {
-      console.error('Login error:', error)
+      console.error("Login error:", error)
       setError(getErrorMessage(error.code))
     }
     setLoading(false)
@@ -31,30 +39,30 @@ const AdminAuth = ({ user, onAuthChange }) => {
   const handleLogout = async () => {
     try {
       await signOut(auth)
-      showNotification('Successfully logged out.')
+      showNotification("Successfully logged out.")
     } catch (error) {
-      console.error('Logout error:', error)
-      setError('Failed to log out. Please try again.')
+      console.error("Logout error:", error)
+      setError("Failed to log out. Please try again.")
     }
   }
 
-  const getErrorMessage = (errorCode) => {
+  const getErrorMessage = errorCode => {
     switch (errorCode) {
-      case 'auth/user-not-found':
-        return 'No admin account found with this email.'
-      case 'auth/wrong-password':
-        return 'Incorrect password.'
-      case 'auth/invalid-email':
-        return 'Invalid email address.'
-      case 'auth/too-many-requests':
-        return 'Too many failed attempts. Please try again later.'
+      case "auth/user-not-found":
+        return "No admin account found with this email."
+      case "auth/wrong-password":
+        return "Incorrect password."
+      case "auth/invalid-email":
+        return "Invalid email address."
+      case "auth/too-many-requests":
+        return "Too many failed attempts. Please try again later."
       default:
-        return 'Login failed. Please check your credentials.'
+        return "Login failed. Please check your credentials."
     }
   }
 
-  const showNotification = (message) => {
-    const notification = document.createElement('div')
+  const showNotification = message => {
+    const notification = document.createElement("div")
     notification.textContent = message
     notification.style.cssText = `
       position: fixed;
@@ -75,12 +83,10 @@ const AdminAuth = ({ user, onAuthChange }) => {
     return (
       <AuthContainer>
         <UserInfo>
-          <FontAwesomeIcon icon={faUser} style={{ marginRight: '8px' }} />
+          <FontAwesomeIcon icon={faUser} style={{ marginRight: "8px" }} />
           Logged in as: {user.email}
         </UserInfo>
-        <LogoutButton onClick={handleLogout}>
-          Sign Out
-        </LogoutButton>
+        <LogoutButton onClick={handleLogout}>Sign Out</LogoutButton>
       </AuthContainer>
     )
   }
@@ -88,31 +94,33 @@ const AdminAuth = ({ user, onAuthChange }) => {
   return (
     <AuthContainer>
       <AuthHeader>
-        <FontAwesomeIcon icon={faLock} style={{ marginRight: '8px' }} />
+        <FontAwesomeIcon icon={faLock} style={{ marginRight: "8px" }} />
         Admin Login Required
       </AuthHeader>
-      
+
       <AuthForm onSubmit={handleLogin}>
         {error && <ErrorMessage>{error}</ErrorMessage>}
-        
+
         <FormGroup>
-          <label>Email:</label>
+          <label htmlFor="admin-email">Email:</label>
           <input
+            id="admin-email"
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
             required
             placeholder="admin@avocadosushi.ca"
           />
         </FormGroup>
-        
+
         <FormGroup>
-          <label>Password:</label>
+          <label htmlFor="admin-password">Password:</label>
           <PasswordWrapper>
             <input
-              type={showPassword ? 'text' : 'password'}
+              id="admin-password"
+              type={showPassword ? "text" : "password"}
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={e => setPassword(e.target.value)}
               required
               placeholder="Enter admin password"
             />
@@ -124,22 +132,29 @@ const AdminAuth = ({ user, onAuthChange }) => {
             </PasswordToggle>
           </PasswordWrapper>
         </FormGroup>
-        
+
         <LoginButton type="submit" disabled={loading || !email || !password}>
           {loading ? (
             <>
-              <FontAwesomeIcon icon={faSpinner} spin style={{ marginRight: '8px' }} />
+              <FontAwesomeIcon
+                icon={faSpinner}
+                spin
+                style={{ marginRight: "8px" }}
+              />
               Signing In...
             </>
           ) : (
             <>
-              <FontAwesomeIcon icon={faSignInAlt} style={{ marginRight: '8px' }} />
+              <FontAwesomeIcon
+                icon={faSignInAlt}
+                style={{ marginRight: "8px" }}
+              />
               Sign In
             </>
           )}
         </LoginButton>
       </AuthForm>
-      
+
       <HelpText>
         Contact the site administrator if you need access credentials.
       </HelpText>
@@ -184,14 +199,14 @@ const FormGroup = styled.div`
     font-weight: 600;
     color: #333;
   }
-  
+
   input {
     width: 100%;
     padding: 12px;
     border: 2px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
-    
+
     &:focus {
       outline: none;
       border-color: #4a7c59;
@@ -214,7 +229,7 @@ const PasswordToggle = styled.button`
   color: #666;
   cursor: pointer;
   padding: 5px;
-  
+
   &:hover {
     color: #4a7c59;
   }
@@ -233,12 +248,12 @@ const LoginButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
-  
+
   &:hover:not(:disabled) {
     background: #3d6b4a;
     transform: translateY(-2px);
@@ -255,7 +270,7 @@ const LogoutButton = styled.button`
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background: #c82333;
     transform: translateY(-2px);

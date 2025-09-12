@@ -1,30 +1,30 @@
-import React from 'react'
-import styled from 'styled-components'
-import Button from '@mui/material/Button'
-import { useContent } from '../../hooks/useContent'
+import Button from "@mui/material/Button"
+// React import removed - not needed with React 17+
+import styled from "styled-components"
+
+import { useContent } from "../../hooks/useContent"
 
 const Links = () => {
   const { content, language } = useContent()
-  
+
   return (
     <LinkContainer>
-      <ContactLinks style={{paddingTop:'2%'}}>
-        <li style={{ whiteSpace: 'pre-line' }}>
-          {content.contact?.address || (
-            language === 'fr' 
+      <ContactLinks style={{ paddingTop: "2%" }}>
+        <li style={{ whiteSpace: "pre-line" }}>
+          {content.contact?.address ||
+            (language === "fr"
               ? "270 ch. Bord-du-Lac - Lakeshore\nPointe-Claire, Quebec\nH9S 4K9"
-              : "270 ch. Bord-du-Lac - Lakeshore\nPointe-Claire, Quebec\nH9S 4K9"
-          )}
+              : "270 ch. Bord-du-Lac - Lakeshore\nPointe-Claire, Quebec\nH9S 4K9")}
         </li>
-        <li>
-          {content.contact?.phone || "(514) 505-4055"}
-        </li>
+        <li>{content.contact?.phone || "(514) 505-4055"}</li>
       </ContactLinks>
       <ContactLinks>
         <li>
           <Button>
-            <StyledLink href={`mailto:${content.contact?.email || 'info@avocadosushi.ca'}`}>
-              {content.contact?.email || 'info@avocadosushi.ca'}
+            <StyledLink
+              href={`mailto:${content.contact?.email || "info@avocadosushi.ca"}`}
+            >
+              {content.contact?.email || "info@avocadosushi.ca"}
             </StyledLink>
           </Button>
         </li>
@@ -37,7 +37,10 @@ const Links = () => {
         </li>
         <li>
           <Button>
-            <StyledLink href="https://www.instagram.com/avocadosushiduvillage/" target="_blank">
+            <StyledLink
+              href="https://www.instagram.com/avocadosushiduvillage/"
+              target="_blank"
+            >
               @avocadosushiduvillage
             </StyledLink>
           </Button>

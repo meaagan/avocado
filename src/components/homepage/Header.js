@@ -1,50 +1,45 @@
-import React from 'react';
-import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image';
- 
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+// React import removed - not needed with React 17+
+import styled from "styled-components"
+
 const Header = () => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        header: file(
-          sourceInstanceName: { eq: "images" }
-          name: { eq: "header" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
+  const data = useStaticQuery(graphql`
+    query {
+      header: file(
+        sourceInstanceName: { eq: "images" }
+        name: { eq: "header" }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 3000) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
-
       }
-    `)
+    }
+  `)
 
-  return(
+  return (
     <HeaderWrapper>
       <Parallax
         Tag="section"
         fluid={data.header.childImageSharp.fluid}
-      >
-      </Parallax>
+      ></Parallax>
     </HeaderWrapper>
   )
-};
-
-
+}
 
 const Parallax = styled(Img)`
-  background-attachment: fixed; 
-  background-position: 60% 50%; 
-  background-repeat: no-repeat; 
-  background-size: cover; 
-  height: 100vh; 
+  background-attachment: fixed;
+  background-position: 60% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
   margin: 0;
-`;
-
-const HeaderWrapper = styled.div`
-    height: 100vh;
 `
 
-export default Header;
+const HeaderWrapper = styled.div`
+  height: 100vh;
+`
+
+export default Header

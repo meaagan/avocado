@@ -1,6 +1,6 @@
-import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+// React import removed - not needed with React 17+
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized

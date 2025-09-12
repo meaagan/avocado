@@ -1,6 +1,6 @@
-import React from "react"
-import Img from 'gatsby-image'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+// React import removed - not needed with React 17+
 
 const Menu1 = () => (
   <StaticQuery
@@ -18,9 +18,7 @@ const Menu1 = () => (
         }
       }
     `}
-    render={data => (
-        <Img fluid={data.img1.childImageSharp.fluid} />
-    )}
+    render={data => <Img fluid={data.img1.childImageSharp.fluid} />}
   />
 )
 
