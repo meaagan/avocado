@@ -132,7 +132,7 @@ module.exports = {
     'eol-last': 'warn',
     'comma-dangle': ['warn', 'always-multiline'],
     'semi': ['warn', 'never'],
-    'quotes': ['warn', 'single', { avoidEscape: true }],
+    'quotes': ['warn', 'double', { avoidEscape: true }],
     'jsx-quotes': ['warn', 'prefer-double'],
 
     // Accessibility rules

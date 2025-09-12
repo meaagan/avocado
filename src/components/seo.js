@@ -7,7 +7,7 @@
 
 import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
-// React import removed - not needed with React 17+
+import React from "react"
 import { Helmet } from "react-helmet"
 
 const SEO = ({ description, lang, meta, title }) => {

@@ -1,5 +1,5 @@
 import Img from "gatsby-image"
-// React import removed - not needed with React 17+
+import React from "react"
 import styled from "styled-components"
 
 const Triptych = props => {

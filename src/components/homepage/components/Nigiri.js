@@ -1,5 +1,5 @@
 import { StaticQuery, graphql } from "gatsby"
-// React import removed - not needed with React 17+
+import React from "react"
 
 import Triptych from "@components/Triptych"
 

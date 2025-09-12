@@ -1,4 +1,4 @@
-// React import removed - not needed with React 17+
+import React from "react"
 
 import Hosomaki from "./Hosomaki"
 import Maki2 from "./Maki2"

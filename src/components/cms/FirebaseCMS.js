@@ -19,7 +19,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { onAuthStateChanged } from "firebase/auth"
 import { doc, getDoc, setDoc } from "firebase/firestore"
-import { useState, useEffect, useCallback } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import { useForm } from "react-hook-form"
 import styled from "styled-components"
 

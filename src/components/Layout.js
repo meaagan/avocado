@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-// React import removed - not needed with React 17+
+import React from "react"
 import { ThemeProvider } from "styled-components"
 
 import "./layout.css"

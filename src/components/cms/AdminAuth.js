@@ -9,7 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { signInWithEmailAndPassword, signOut } from "firebase/auth"
-import { useState } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import { auth } from "../../lib/firebase"

@@ -1,4 +1,4 @@
-// React import removed - not needed with React 17+
+import React from "react"
 import styled from "styled-components"
 
 import { Container } from "@components/global"
