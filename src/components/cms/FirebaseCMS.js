@@ -3,7 +3,9 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useForm } from 'react-hook-form'
 import { doc, getDoc, setDoc } from 'firebase/firestore'
-import { db } from '../../lib/firebase'
+import { onAuthStateChanged } from 'firebase/auth'
+import { db, auth } from '../../lib/firebase'
+import AdminAuth from './AdminAuth'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faHome, 
@@ -28,7 +30,7 @@ import {
 
 const FirebaseCMS = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isAdmin, setIsAdmin] = useState(false)
+  const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(false)
   const [editingLanguage, setEditingLanguage] = useState('en')
   const [currentPage, setCurrentPage] = useState('homepage')
@@ -90,20 +92,17 @@ const FirebaseCMS = () => {
   }
 
   useEffect(() => {
-    // Check for secret admin parameter
-    const urlParams = new URLSearchParams(window.location.search)
-    const isAdminUrl = urlParams.get('admin') === 'avocado2024'
-    
-    if (isAdminUrl) {
-      setIsAdmin(true)
-      localStorage.setItem('avocado-admin', 'true')
-      window.history.replaceState({}, '', window.location.pathname)
-      showNotification('Admin mode activated! Click the gear icon to start editing.')
-    } else {
-      setIsAdmin(localStorage.getItem('avocado-admin') === 'true')
-    }
+    // Listen for authentication state changes
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user)
+      if (user) {
+        showNotification('Admin authenticated! Click the gear icon to start editing.')
+      }
+    })
     
     loadContent()
+    
+    return () => unsubscribe()
   }, [currentPage, editingLanguage])
 
   const loadContent = async () => {
@@ -405,19 +404,30 @@ const FirebaseCMS = () => {
       .replace('Url', 'URL')
   }
 
-  const logoutAdmin = () => {
-    setIsAdmin(false)
-    setIsOpen(false)
-    localStorage.removeItem('avocado-admin')
-    showNotification('Admin mode disabled.')
+  const handleAuthChange = (newUser) => {
+    setUser(newUser)
+    if (!newUser) {
+      setIsOpen(false)
+    }
   }
+
+  // Check for secret admin parameter to show toggle for non-authenticated users
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const isAdminUrl = urlParams.get('admin') === 'avocado2024'
+    
+    if (isAdminUrl && !user) {
+      setIsOpen(true)
+      window.history.replaceState({}, '', window.location.pathname)
+    }
+  }, [user])
 
   return (
     <>
       <AdminToggle 
         onClick={() => setIsOpen(!isOpen)} 
-        isAdmin={isAdmin}
-        style={{ display: isAdmin ? 'block' : 'none' }}
+        isAdmin={!!user}
+        style={{ display: user || isOpen ? 'block' : 'none' }}
       >
         <FontAwesomeIcon icon={faCog} />
       </AdminToggle>
@@ -431,28 +441,10 @@ const FirebaseCMS = () => {
           
           <AdminContent>
             <AdminSection>
-              <AdminButton onClick={() => setIsAdmin(!isAdmin)} primary={isAdmin}>
-                {isAdmin ? (
-                  <>
-                    <FontAwesomeIcon icon={faCog} style={{ marginRight: '8px' }} />
-                    Admin Mode ON
-                  </>
-                ) : (
-                  <>
-                    <FontAwesomeIcon icon={faCog} style={{ marginRight: '8px' }} />
-                    Admin Mode OFF
-                  </>
-                )}
-              </AdminButton>
-              
-              {isAdmin && (
-                <LogoutButton onClick={logoutAdmin}>
-                  Exit Admin Mode
-                </LogoutButton>
-              )}
+              <AdminAuth user={user} onAuthChange={handleAuthChange} />
             </AdminSection>
 
-            {isAdmin && (
+            {user && (
               <>
                 {/* Page Switcher */}
                 <PageSection>
@@ -533,7 +525,7 @@ const AdminToggle = styled.button`
   top: 20px;
   right: 20px;
   z-index: 9999;
-  background: ${props => props.isAdmin ? '#ff6b35' : '#4a7c59'};
+  background: ${props => props.isAdmin ? '#4a7c59' : '#666'};
   color: white;
   border: none;
   padding: 15px;
@@ -608,52 +600,6 @@ const AdminSection = styled.div`
   margin-bottom: 25px;
 `
 
-const AdminButton = styled.button`
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  ${props => props.primary ? `
-    background: #ff6b35;
-    color: white;
-    &:hover { background: #ff5722; }
-  ` : `
-    background: #f5f5f5;
-    color: #333;
-    &:hover { background: #e0e0e0; }
-  `}
-  
-  svg {
-    transition: all 0.3s ease;
-  }
-`
-
-const LogoutButton = styled.button`
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #ff6b35;
-  border-radius: 25px;
-  background: white;
-  color: #ff6b35;
-  cursor: pointer;
-  font-weight: 600;
-  margin-top: 10px;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background: #ff6b35;
-    color: white;
-    transform: translateY(-2px);
-  }
-`
 
 const PageSection = styled.div`
   margin-bottom: 25px;
